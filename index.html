@@ -20,8 +20,8 @@
 
   <style>
     :root {
-      --yellow: #F5C444; /* Exact warm golden-yellow of the animation background */
-      --yellow-bright: #FFC933;
+      --yellow: #F5C444; /* Exact warm golden-yellow of the animation background (rgb 245, 196, 68) */
+      --yellow-bright: #F5C444; /* Exactly matches video frame golden yellow */
       --yellow-soft: #FFF7DF;
       --yellow-tint: #FFFDF4;
       --ink: #111111;
@@ -53,6 +53,8 @@
       scroll-behavior: smooth;
       scroll-padding-top: 86px;
       -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -64,6 +66,8 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      width: 100%;
+      position: relative;
     }
 
     a {
@@ -446,8 +450,8 @@
     }
 
     .pricing-card.popular {
-      border: 2.5px solid #FFC933;
-      box-shadow: 0 16px 44px rgba(226, 171, 0, 0.16);
+      border: 2.5px solid var(--yellow);
+      box-shadow: 0 16px 44px rgba(245, 196, 68, 0.22);
       background: #FFFFFF;
     }
 
@@ -473,7 +477,7 @@
     }
 
     .badge-popular {
-      background: #FFC933;
+      background: var(--yellow);
       color: var(--ink);
       font-weight: 800;
       font-size: 0.78rem;
@@ -644,7 +648,7 @@
       width: 50px;
       height: 50px;
       border-radius: 16px;
-      background: #FFC933;
+      background: var(--yellow);
       display: grid;
       place-items: center;
       font-family: var(--font-heading);
@@ -652,7 +656,7 @@
       font-size: 1.35rem;
       color: var(--ink);
       margin-bottom: 22px;
-      box-shadow: 0 4px 14px rgba(255, 201, 51, 0.35);
+      box-shadow: 0 4px 14px rgba(245, 196, 68, 0.35);
     }
 
     .step-title {
@@ -793,7 +797,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: #FFC933;
+      background: var(--yellow);
       color: var(--ink);
       font-family: var(--font-heading);
       font-weight: 800;
@@ -1059,8 +1063,7 @@
        8. CONTACT SECTION & DIRECT LINKS
     ========================================= */
     .contact-card-box {
-      background: var(--yellow-bright);
-      background-image: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+      background-color: var(--yellow); /* Matches exact video frame golden yellow #F5C444 */
       border-radius: var(--radius-lg);
       padding: 56px 52px;
       display: grid;
@@ -1068,12 +1071,23 @@
       gap: 50px;
       box-shadow: var(--shadow-lg);
       position: relative;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-left {
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     .contact-left h2 {
       font-size: clamp(2.2rem, 4vw, 3.4rem);
       line-height: 1.05;
       margin-bottom: 14px;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .contact-left p {
@@ -1087,20 +1101,26 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .direct-contact-pill {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       padding: 13px 18px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border-radius: var(--radius-pill);
       font-weight: 700;
       font-size: 0.94rem;
       color: var(--ink);
       transition: var(--transition-smooth);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
     }
 
     .direct-contact-pill:hover {
@@ -1110,14 +1130,40 @@
     }
 
     .direct-pill-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--yellow-soft);
       display: grid;
       place-items: center;
       font-size: 0.95rem;
       color: #7A5700;
+      flex-shrink: 0;
+    }
+
+    .direct-contact-pill > div {
+      min-width: 0;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .direct-contact-pill div small {
+      display: block;
+      font-size: 0.72rem;
+      color: #7B662C;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .direct-contact-pill div span {
+      display: block;
+      font-size: clamp(0.82rem, 3.4vw, 0.95rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      word-break: break-all;
+      overflow-wrap: anywhere;
     }
 
     /* Contact Form */
@@ -1129,12 +1175,20 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
     }
 
     .form-field {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .form-field.full {
@@ -1155,6 +1209,9 @@
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
       font-size: 0.94rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .form-field input:focus, .form-field select:focus {
@@ -1169,12 +1226,16 @@
       flex-direction: column;
       gap: 10px;
       margin-top: 6px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .form-note {
       font-size: 0.78rem;
       color: #726E64;
       line-height: 1.45;
+      word-break: break-word;
     }
 
     /* =========================================
@@ -1238,6 +1299,8 @@
 
     .footer-links-list a {
       transition: color 0.2s ease;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .footer-links-list a:hover {
@@ -1294,7 +1357,7 @@
       border-radius: 50%;
       background: var(--ink);
       color: #FFFFFF;
-      border: 3px solid #FFC933;
+      border: 3px solid var(--yellow);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
       display: grid;
       place-items: center;
@@ -1351,7 +1414,7 @@
     }
 
     .drawer-header {
-      background: #FFC933;
+      background: var(--yellow);
       padding: 16px 18px;
       display: flex;
       align-items: center;
@@ -1413,8 +1476,11 @@
 
       .contact-card-box {
         grid-template-columns: 1fr;
-        padding: 38px 28px;
-        gap: 34px;
+        padding: 38px 24px;
+        gap: 32px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .footer-top-grid {
@@ -1469,25 +1535,139 @@
         font-size: 1.3rem;
       }
 
+      .contact-card-box {
+        padding: 26px 16px;
+        border-radius: 20px;
+        gap: 26px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .contact-left h2 {
+        font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+        line-height: 1.15;
+        margin-bottom: 10px;
+      }
+
+      .contact-left p {
+        font-size: 0.94rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .direct-links-column {
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .direct-contact-pill {
+        padding: 11px 13px;
+        gap: 10px;
+        border-radius: 14px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .direct-pill-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+      }
+
+      .direct-contact-pill div small {
+        font-size: 0.7rem;
+      }
+
+      .direct-contact-pill div span {
+        font-size: clamp(0.76rem, 3.4vw, 0.88rem);
+        word-break: break-all;
+        overflow-wrap: anywhere;
+        white-space: normal;
+      }
+
       .contact-form {
         grid-template-columns: 1fr;
-        padding: 24px 18px;
+        padding: 20px 14px;
+        border-radius: 16px;
+        gap: 13px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .form-field.full, .form-actions-row {
         grid-column: 1;
       }
 
+      .form-field input, .form-field select {
+        padding: 12px 13px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .form-actions-row .btn {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        padding: 12px 16px;
+        font-size: 0.92rem;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
       .float-chat-btn {
         right: 16px;
         bottom: 16px;
-        width: 54px;
-        height: 54px;
+        width: 52px;
+        height: 52px;
       }
 
       .chat-drawer {
-        right: 14px;
-        bottom: 80px;
+        right: 12px;
+        bottom: 78px;
+        width: min(340px, calc(100% - 24px));
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wrap {
+        width: calc(100% - 16px);
+      }
+
+      .contact-card-box {
+        padding: 20px 12px;
+        gap: 20px;
+        border-radius: 16px;
+      }
+
+      .direct-contact-pill {
+        padding: 10px 10px;
+        gap: 8px;
+        border-radius: 12px;
+      }
+
+      .direct-pill-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.84rem;
+      }
+
+      .direct-contact-pill div small {
+        font-size: 0.68rem;
+      }
+
+      .direct-contact-pill div span {
+        font-size: 0.74rem;
+      }
+
+      .contact-form {
+        padding: 16px 12px;
+        gap: 11px;
       }
     }
 
