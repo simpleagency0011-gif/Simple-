@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Node / Vercel
+node_modules/
+.vercel/
+
+# Temporary files
+*.tmp
+script_*.js

@@ -1,0 +1,20 @@
+{
+  "name": "simple-agency-website",
+  "version": "1.0.0",
+  "description": "SIMPLE – Ads, AI Agents & Websites for Your Business",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "simple",
+    "agency",
+    "marketing",
+    "ads",
+    "ai-agents",
+    "website"
+  ],
+  "author": "SIMPLE Agency",
+  "license": "MIT"
+}
