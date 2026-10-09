@@ -503,33 +503,129 @@
     }
 
     .browser-view-body {
-      padding: 22px;
+      padding: 16px;
       background: linear-gradient(180deg, #12131C 0%, #0C0D13 100%);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .store-hero-preview {
+    .browser-live-badge {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      gap: 6px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #34D399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 9px;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .pulse-live-indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px #10B981;
+      animation: livePulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes livePulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .store-photo-canvas {
+      position: relative;
       border-radius: 12px;
-      padding: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+      background: #000;
     }
 
-    .store-hero-preview h4 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      color: var(--text-pure);
+    .store-showcase-img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.35s ease, transform 0.4s ease;
     }
 
-    .store-hero-preview p {
+    .store-photo-canvas:hover .store-showcase-img {
+      transform: scale(1.02);
+    }
+
+    .store-photo-glass-overlay {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .store-overlay-pill {
+      background: rgba(14, 15, 20, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 6px 12px;
       font-size: 0.78rem;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .store-overlay-pill .pill-dot {
+      color: var(--accent-gold);
+    }
+
+    .photo-tab-deck {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .photo-tab-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .photo-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .photo-tab-btn.active {
+      background: rgba(245, 196, 68, 0.15);
+      border-color: rgba(245, 196, 68, 0.4);
+      color: var(--accent-gold);
+      box-shadow: 0 0 16px rgba(245, 196, 68, 0.2);
     }
 
     .store-chips-deck {
@@ -539,9 +635,9 @@
     }
 
     .store-chip-tag {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 6px;
       background: rgba(16, 185, 129, 0.15);
       color: #34D399;
@@ -554,122 +650,237 @@
       border-color: rgba(245, 196, 68, 0.3);
     }
 
-    /* BENTO VISUAL 2: 24/7 AI AGENT SMARTPHONE CONVERSATION */
-    .mockup-chat-chassis {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 20px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: auto;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    .store-chip-tag.emerald {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      border-color: rgba(16, 185, 129, 0.3);
     }
 
-    .chat-top-status {
+    /* Hero Showcase Frame */
+    .hero-showcase-frame {
+      margin-top: 36px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 196, 68, 0.05);
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .hero-showcase-top {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding-bottom: 10px;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 14px;
+      flex-wrap: wrap;
     }
 
-    .chat-avatar-disc {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--accent-gold);
-      color: #0A0A0E;
+    .showcase-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
       font-weight: 800;
-      display: grid;
-      place-items: center;
-      font-size: 0.95rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
-    .chat-channel-info strong {
+    .showcase-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .hero-photo-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000;
+    }
+
+    .hero-showcase-img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-photo-wrapper:hover .hero-showcase-img {
+      transform: scale(1.02);
+    }
+
+    .hero-photo-tag-badge {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(14, 15, 20, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-photo-tag-badge .tag-icon {
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+    }
+
+    .hero-photo-tag-badge strong {
       display: block;
       font-size: 0.88rem;
-    }
-
-    .chat-channel-info span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.72rem;
-      color: var(--accent-emerald);
+      color: #FFFFFF;
       font-weight: 700;
     }
 
-    .chat-bubbles-stack {
+    .hero-photo-tag-badge span {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+    }
+
+    /* BENTO VISUAL 2: 24/7 AI AGENT SMARTPHONE CONVERSATION */
+    .ai-agent-photo-chassis {
+      position: relative;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: auto;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    .ai-agent-photo-top {
+      background: #101118;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ai-agent-photo-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #34D399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 9999px;
+    }
+
+    .ai-agent-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .ai-agent-showcase-img {
+      width: 100%;
+      height: auto;
+      max-height: 290px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .ai-agent-photo-chassis:hover .ai-agent-showcase-img {
+      transform: scale(1.03);
+    }
+
+    .ai-agent-bottom-info {
+      padding: 12px 14px;
+      background: linear-gradient(180deg, #12131C 0%, #0C0D13 100%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .bubble-message {
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-size: 0.82rem;
-      line-height: 1.45;
-      max-width: 90%;
+    .ai-agent-chips-deck {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
     }
 
-    .bubble-inbound {
-      align-self: flex-start;
-      background: #1C1D26;
-      color: var(--text-pure);
-      border-bottom-left-radius: 4px;
-    }
-
-    .bubble-ai-reply {
-      align-self: flex-end;
-      background: #252735;
-      color: #FFFFFF;
-      border-bottom-right-radius: 4px;
+    .ai-chip-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(245, 196, 68, 0.12);
+      color: var(--accent-gold);
       border: 1px solid rgba(245, 196, 68, 0.25);
     }
 
-    .bubble-ai-reply .price-hl {
-      color: var(--accent-gold);
-      font-weight: 800;
-    }
-
-    .bubble-typing-dots {
-      align-self: flex-end;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 6px 12px;
-      background: #252735;
-      border-radius: 12px;
-    }
-
-    .bubble-typing-dots span {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent-gold);
-      animation: bounceDots 1.2s infinite ease-in-out;
-    }
-    .bubble-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .bubble-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes bounceDots {
-      0%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-4px); }
+    .ai-chip-pill.green {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34D399;
+      border-color: rgba(16, 185, 129, 0.25);
     }
 
     /* BENTO VISUAL 3: MULTI-PLATFORM AD PERFORMANCE ENGINE */
-    .mockup-ad-analytics {
+    .ad-campaign-photo-chassis {
+      position: relative;
       background: var(--bg-elevated);
       border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: auto;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    .ad-campaign-photo-top {
+      background: #101118;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ad-campaign-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .ad-campaign-showcase-img {
+      width: 100%;
+      height: auto;
+      max-height: 320px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .ad-campaign-photo-chassis:hover .ad-campaign-showcase-img {
+      transform: scale(1.03);
+    }
+
+    .ad-campaign-bottom-hud {
+      padding: 14px 16px;
+      background: linear-gradient(180deg, #12131C 0%, #0C0D13 100%);
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: auto;
+      gap: 10px;
     }
 
     .ad-channels-lineup {
@@ -1387,6 +1598,18 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .hero-photo-tag-badge {
+        position: static;
+        margin: 10px;
+      }
+      .hero-showcase-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .store-photo-glass-overlay {
+        position: static;
+        padding-top: 8px;
+      }
     }
 
     @media (max-width: 380px) {
@@ -1491,6 +1714,26 @@
               <span class="metric-caption">Tech Skills Needed</span>
             </div>
           </div>
+
+          <!-- Hero Featured Visual Showcase -->
+          <div class="hero-showcase-frame">
+            <div class="hero-showcase-top">
+              <div class="showcase-status-badge">
+                <span class="pulse-live-indicator"></span> ✦ PRODUCTION SHOWCASE
+              </div>
+              <span class="showcase-meta">100% Custom Responsive Development · Zero Generic Templates</span>
+            </div>
+            <div class="hero-photo-wrapper">
+              <img src="web-dev-nexus.jpg" alt="SIMPLE Studio Premium Web Development, UI/UX and Engineering" class="hero-showcase-img" loading="eager">
+              <div class="hero-photo-tag-badge">
+                <span class="tag-icon">⚡</span>
+                <div>
+                  <strong>Nexus Multi-Device Platform</strong>
+                  <span>Engineered for Instant Conversions across Desktop, Tablet &amp; Mobile</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1516,26 +1759,41 @@
               Bespoke, blazingly fast websites built with 100/100 Lighthouse performance, mobile-first micro-interactions, clean checkout flows, and zero technical jargon.
             </p>
 
-            <!-- Visual Mockup: Browser Window UI -->
+            <!-- Visual Mockup: Browser Window UI with Premium Photography -->
             <div class="mockup-browser-shell">
               <div class="browser-header-strip">
                 <div class="window-controls-dots">
                   <span></span><span></span><span></span>
                 </div>
                 <div class="browser-url-bar">
-                  <span aria-hidden="true">🔒</span> https://yourbrand.store/live
+                  <span aria-hidden="true">🔒</span> https://nexus.simple.agency/live-preview
+                </div>
+                <div class="browser-live-badge">
+                  <span class="pulse-live-indicator"></span> 100/100 LIGHTHOUSE
                 </div>
               </div>
               <div class="browser-view-body">
-                <div class="store-hero-preview">
-                  <div>
-                    <h4>Premium Apparel &amp; Lifestyle</h4>
-                    <p>Designed &amp; Launched by SIMPLE Studio · 4 Business Days</p>
+                <div class="store-photo-canvas">
+                  <img src="web-dev-nexus.jpg" alt="High-Converting Web Development by SIMPLE Studio" class="store-showcase-img" id="showcasePhoto" loading="lazy">
+                  <div class="store-photo-glass-overlay">
+                    <div class="store-overlay-pill" id="showcaseBadgeText">
+                      <span class="pill-dot">✦</span>
+                      <span>Nexus Multi-Device Suite · Desktop 4K + Laptop + Tablet</span>
+                    </div>
                   </div>
-                  <div class="store-chips-deck">
-                    <span class="store-chip-tag">⚡ 0.3s Paint</span>
-                    <span class="store-chip-tag amber">100% Mobile Fluid</span>
-                  </div>
+                </div>
+                <div class="photo-tab-deck">
+                  <button type="button" class="photo-tab-btn active" onclick="switchShowcasePhoto('web-dev-nexus.jpg', this)">
+                    <span>✦</span> Multi-Device Ecosystem
+                  </button>
+                  <button type="button" class="photo-tab-btn" onclick="switchShowcasePhoto('web-dev-premium.jpg', this)">
+                    <span>✦</span> Luxury E-Commerce &amp; Dashboard
+                  </button>
+                </div>
+                <div class="store-chips-deck">
+                  <span class="store-chip-tag">⚡ 0.28s Instant Paint</span>
+                  <span class="store-chip-tag amber">100% Mobile &amp; Desktop Fluid</span>
+                  <span class="store-chip-tag emerald">Zero Tech Skills Needed</span>
                 </div>
               </div>
             </div>
@@ -1546,27 +1804,27 @@
             <div class="brick-badge">02 · Autonomous AI Rep</div>
             <h3 class="brick-title">24/7 AI Sales Rep on WhatsApp &amp; IG.</h3>
             <p class="brick-description">
-              Never miss a midnight order. Answers customer FAQs, checks inventory, and books sales instantly.
+              Never miss a midnight order. Answers customer FAQs, qualifies buyers, and secures bookings automatically with green-tick confirmations.
             </p>
 
-            <!-- Visual Mockup: WhatsApp Glass Frame -->
-            <div class="mockup-chat-chassis">
-              <div class="chat-top-status">
-                <div class="chat-avatar-disc">S</div>
-                <div class="chat-channel-info">
-                  <strong>SIMPLE AI Assistant</strong>
-                  <span>● Live on WhatsApp</span>
+            <!-- Visual Mockup: AI Agent Photo Chassis -->
+            <div class="ai-agent-photo-chassis">
+              <div class="ai-agent-photo-top">
+                <div class="browser-url-bar" style="max-width: 170px;">
+                  <span aria-hidden="true">💬</span> WhatsApp AI
+                </div>
+                <div class="ai-agent-photo-badge">
+                  <span class="pulse-live-indicator"></span> 24/7 ONLINE
                 </div>
               </div>
-              <div class="chat-bubbles-stack">
-                <div class="bubble-message bubble-inbound">
-                  Hi! Are your black trench coats in stock?
-                </div>
-                <div class="bubble-message bubble-ai-reply">
-                  Yes! We have 3 units remaining in Size L for <span class="price-hl">₹2,499</span>. Would you like me to book one for you right now?
-                </div>
-                <div class="bubble-typing-dots">
-                  <span></span><span></span><span></span>
+              <div class="ai-agent-img-wrap">
+                <img src="ai-agent-showcase.jpg" alt="24/7 Autonomous WhatsApp AI Sales Agent by SIMPLE Studio" class="ai-agent-showcase-img" loading="lazy">
+              </div>
+              <div class="ai-agent-bottom-info">
+                <div class="ai-agent-chips-deck">
+                  <span class="ai-chip-pill">⚡ Instant 1s Reply</span>
+                  <span class="ai-chip-pill green">✓ Auto Booking</span>
+                  <span class="ai-chip-pill">Auto Price Quote</span>
                 </div>
               </div>
             </div>
@@ -1575,37 +1833,42 @@
           <!-- BENTO BRICK 3: MULTI-PLATFORM AD ENGINE (Col 6) -->
           <div class="bento-brick brick-col-6">
             <div class="brick-badge">03 · Targeted Ads</div>
-            <h3 class="brick-title">Targeted campaigns across Instagram, FB, YouTube &amp; X.</h3>
+            <h3 class="brick-title">Targeted campaigns across Instagram, FB, YouTube &amp; Google.</h3>
             <p class="brick-description">
-              You provide the photo or video reel creative; SIMPLE manages account setup, audience demographics, bid optimization, and daily campaign running.
+              You provide the photo or video reel creative; SIMPLE manages campaign setup, audience demographics, bid optimization, and daily running across multiple platforms.
             </p>
 
-            <!-- Visual Mockup: Ad Analytics HUD -->
-            <div class="mockup-ad-analytics">
-              <div class="ad-channels-lineup">
-                <span class="ad-channel-badge">📸 Instagram Reels</span>
-                <span class="ad-channel-badge">📘 Facebook</span>
-                <span class="ad-channel-badge">▶ YouTube</span>
-                <span class="ad-channel-badge">✖ X</span>
-              </div>
-              <div class="ad-kpi-grid">
-                <div class="kpi-cell">
-                  <small>ROAS Average</small>
-                  <strong class="green">4.2x</strong>
+            <!-- Visual Mockup: Ad Campaign Photo Chassis -->
+            <div class="ad-campaign-photo-chassis">
+              <div class="ad-campaign-photo-top">
+                <div class="ad-channels-lineup">
+                  <span class="ad-channel-badge">📸 Instagram Feed</span>
+                  <span class="ad-channel-badge">🔍 Google Search</span>
+                  <span class="ad-channel-badge">▶ YouTube</span>
                 </div>
-                <div class="kpi-cell">
-                  <small>Targeting</small>
-                  <strong>Hyper-Local</strong>
-                </div>
-                <div class="kpi-cell">
-                  <small>Budget Optimization</small>
-                  <strong class="gold">Active</strong>
+                <div class="browser-live-badge">
+                  <span class="pulse-live-indicator"></span> 4.8x ROAS AVERAGE
                 </div>
               </div>
-              <svg class="ad-trend-curve" viewBox="0 0 300 48" fill="none">
-                <path d="M0,42 Q75,30 150,16 T300,4" stroke="#F5C444" stroke-width="3" stroke-linecap="round"/>
-                <path d="M0,42 Q75,30 150,16 T300,4 L300,48 L0,48 Z" fill="rgba(245, 196, 68, 0.1)"/>
-              </svg>
+              <div class="ad-campaign-img-wrap">
+                <img src="ad-campaign-showcase.jpg" alt="Targeted Digital Ads Running on Multiple Platforms by SIMPLE Studio" class="ad-campaign-showcase-img" loading="lazy">
+              </div>
+              <div class="ad-campaign-bottom-hud">
+                <div class="ad-kpi-grid">
+                  <div class="kpi-cell">
+                    <small>ROAS Average</small>
+                    <strong class="green">4.8x Multiplier</strong>
+                  </div>
+                  <div class="kpi-cell">
+                    <small>Platforms</small>
+                    <strong>Instagram · Google · YT</strong>
+                  </div>
+                  <div class="kpi-cell">
+                    <small>Ad Placement</small>
+                    <strong class="gold">Targeting Active</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1991,6 +2254,31 @@
        JAVASCRIPT: INTERACTIVE PLAN SELECTION, GREEN TICK & WHATSAPP FLOW
        ========================================================================== -->
   <script>
+    // Showcase Photo Switcher
+    window.switchShowcasePhoto = function(imgSrc, btn) {
+      const img = document.getElementById('showcasePhoto');
+      const badge = document.getElementById('showcaseBadgeText');
+      if (!img) return;
+      img.style.opacity = '0.3';
+      img.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        img.src = imgSrc;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+        if (badge) {
+          if (imgSrc.includes('nexus')) {
+            badge.innerHTML = '<span class="pill-dot">✦</span><span>Nexus Multi-Device Suite · Desktop 4K + Laptop + Tablet</span>';
+          } else {
+            badge.innerHTML = '<span class="pill-dot">✦</span><span>Aethera Luxury E-Commerce · Real-Time Sales &amp; Mobile UI</span>';
+          }
+        }
+      }, 180);
+
+      const allTabs = document.querySelectorAll('.photo-tab-btn');
+      allTabs.forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    };
+
     document.addEventListener('DOMContentLoaded', () => {
       // State
       let selectedPackageName = 'Website + AI Agent + Free Ad Run';
