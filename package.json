@@ -1,11 +1,16 @@
 {
-  "name": "simple-agency-website",
-  "version": "1.0.0",
+  "name": "simple-agency-platform",
+  "version": "1.1.0",
   "description": "SIMPLE – Ads, AI Agents & Websites for Your Business",
   "main": "index.html",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "npx serve .",
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "test:security": "node test-security.js",
+    "audit": "npm audit --audit-level=moderate"
   },
   "keywords": [
     "simple",
@@ -13,8 +18,12 @@
     "marketing",
     "ads",
     "ai-agents",
-    "website"
+    "website",
+    "bento-grid",
+    "security"
   ],
   "author": "SIMPLE Agency",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
 }

@@ -1,21 +1,16 @@
 /**
  * Vercel Serverless API Route: POST /api/book-plan
- * Secure Plan Booking, Email Notification, and WhatsApp AI Assistant Linker
+ * Strict Schema Validation + Endpoint Rate Limiting + Information Leakage Protection
  */
 
-const {
-  sanitizeText,
-  validateEmail,
-  validatePhone,
-  checkRateLimit,
-  isOriginAllowed,
-  scrubPII
-} = require('./security-utils');
+const { validateSchema, bookingSchema } = require('./validator');
+const rateLimiter = require('./rate-limiter');
+const { isOriginAllowed, scrubPII } = require('./security-utils');
 
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin || req.headers.referer || '';
 
-  // 11. CORS Tightening
+  // 11. CORS & Hardened Headers
   if (isOriginAllowed(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin || '*');
   } else {
@@ -39,52 +34,47 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  // 6. Sliding Window Rate Limiting (5 requests per 15 minutes per IP)
+  // 1. Endpoint Rate Limiting (Moderate public tier)
   const clientIp = req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress || 'unknown-client';
-  const rateLimit = checkRateLimit(clientIp, 5, 15 * 60 * 1000);
+  const rateLimitStatus = rateLimiter.checkPublicEndpoint(clientIp);
 
-  if (!rateLimit.isAllowed) {
+  if (!rateLimitStatus.allowed) {
+    res.setHeader('Retry-After', rateLimitStatus.retryAfter);
     return res.status(429).json({
       success: false,
-      error: `Too many booking requests. Please wait ${rateLimit.resetInSeconds} seconds before trying again.`
+      error: rateLimitStatus.reason,
+      retryAfterSeconds: rateLimitStatus.retryAfter
     });
   }
 
   try {
-    const { name, phone, email, business, planName, planPrice, note } = req.body || {};
+    const rawData = req.body || {};
 
-    // Strict validation
-    if (!name || typeof name !== 'string' || name.trim().length < 2) {
-      return res.status(400).json({ success: false, error: 'Please provide a valid full name.' });
+    // 2. Strict Input Validation (Reject, never just escape/sanitize)
+    const validation = validateSchema(rawData, bookingSchema, true);
+    if (!validation.valid) {
+      return res.status(400).json({
+        success: false,
+        error: 'Validation failed. The submitted payload does not match required schema constraints.',
+        details: validation.errors
+      });
     }
 
-    if (!validatePhone(phone)) {
-      return res.status(400).json({ success: false, error: 'Please enter a valid 10-digit WhatsApp or mobile number.' });
-    }
-
-    if (!validateEmail(email)) {
-      return res.status(400).json({ success: false, error: 'Please enter a valid email address.' });
-    }
-
-    if (!planName || typeof planName !== 'string') {
-      return res.status(400).json({ success: false, error: 'Please select a valid service package.' });
-    }
-
-    // 1 & 2. Sanitize all incoming fields to stop XSS and Injection
+    // Clean, strictly validated fields
     const safeData = {
       bookingId: 'SMPL-' + Math.random().toString(36).substring(2, 8).toUpperCase(),
       createdAt: new Date().toISOString(),
-      name: sanitizeText(name, 100),
-      phone: sanitizeText(phone, 20),
-      email: sanitizeText(email, 120),
-      business: sanitizeText(business || 'General Business', 100),
-      planName: sanitizeText(planName, 120),
-      planPrice: sanitizeText(planPrice || 'Custom Quote', 50),
-      note: sanitizeText(note || '', 300)
+      name: rawData.name.trim(),
+      phone: rawData.phone.trim(),
+      email: rawData.email.trim().toLowerCase(),
+      business: rawData.business.trim(),
+      planName: rawData.planName.trim(),
+      planPrice: (rawData.planPrice || 'Custom Quote').trim(),
+      note: (rawData.note || '').trim()
     };
 
-    // 19. Scrub PII before logging to monitoring tools
-    console.log('[BOOKING_CREATED]', scrubPII(safeData));
+    // 5. Information Leakage & PII Redaction in Server Logs
+    console.log('[BOOKING_CREATED_SECURE]', scrubPII(safeData));
 
     // Construct formatted WhatsApp message for owner (+919407928737)
     const rawWaMessage = `Hi SIMPLE Agency! 👋
@@ -104,7 +94,7 @@ Please share the onboarding details & start process!`;
     // Return sanitized booking confirmation and action payloads
     return res.status(200).json({
       success: true,
-      message: 'Plan successfully selected and booked!',
+      message: 'Plan successfully selected and validated!',
       booking: {
         bookingId: safeData.bookingId,
         clientName: safeData.name,
@@ -118,8 +108,8 @@ Please share the onboarding details & start process!`;
     });
 
   } catch (err) {
-    // Keep error stack traces internal (Security Best Practice)
-    console.error('[BOOKING_ERROR]', err.message);
+    // 5. Error Handling & Information Leakage Defense: Never expose stack trace or database error to client
+    console.error('[BOOKING_INTERNAL_EXCEPTION]', scrubPII({ message: err.message, stack: err.stack }));
     return res.status(500).json({
       success: false,
       error: 'An internal error occurred while processing your booking. Please try via WhatsApp directly.'

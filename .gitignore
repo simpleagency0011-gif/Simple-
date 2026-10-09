@@ -12,6 +12,20 @@ yarn-debug.log*
 node_modules/
 .vercel/
 
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+
+# Isolated Uploads Directory
+uploads/
+temp_uploads/
+
 # Temporary files
 *.tmp
 script_*.js
