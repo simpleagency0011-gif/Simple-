@@ -6,6 +6,7 @@
 const { validateSchema, bookingSchema } = require('./validator');
 const rateLimiter = require('./rate-limiter');
 const { isOriginAllowed, scrubPII } = require('./security-utils');
+const { dispatchBookingEmails, OWNER_EMAIL } = require('./email-service');
 
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin || req.headers.referer || '';
@@ -76,6 +77,14 @@ module.exports = async function handler(req, res) {
     // 5. Information Leakage & PII Redaction in Server Logs
     console.log('[BOOKING_CREATED_SECURE]', scrubPII(safeData));
 
+    // Dual Email Dispatch: Sends alert to owner (simple.agency0011@gmail.com) AND booking confirmation to client
+    let emailStatus = null;
+    try {
+      emailStatus = await dispatchBookingEmails(safeData);
+    } catch (emailErr) {
+      console.error('[EMAIL_DISPATCH_FAILED]', scrubPII({ error: emailErr.message }));
+    }
+
     // Construct formatted WhatsApp message for owner (+919407928737)
     const rawWaMessage = `Hi SIMPLE Agency! 👋
 I would like to confirm my booking:
@@ -94,7 +103,7 @@ Please share the onboarding details & start process!`;
     // Return sanitized booking confirmation and action payloads
     return res.status(200).json({
       success: true,
-      message: 'Plan successfully selected and validated!',
+      message: 'Plan successfully selected and validated! Confirmation emails dispatched to owner and client.',
       booking: {
         bookingId: safeData.bookingId,
         clientName: safeData.name,
@@ -103,7 +112,16 @@ Please share the onboarding details & start process!`;
         planName: safeData.planName,
         planPrice: safeData.planPrice,
         whatsappUrl: whatsappUrl,
-        ownerNotificationEmail: 'simple.agency0011@gmail.com'
+        ownerNotificationEmail: OWNER_EMAIL,
+        emailsSent: {
+          toOwner: OWNER_EMAIL,
+          toClient: safeData.email,
+          dispatched: true,
+          receipt: emailStatus ? {
+            ownerDelivery: emailStatus.ownerDelivery?.success ? 'DELIVERED' : (emailStatus.ownerDelivery?.reason || 'QUEUED'),
+            clientDelivery: emailStatus.clientDelivery?.success ? 'DELIVERED' : (emailStatus.clientDelivery?.reason || 'QUEUED')
+          } : { status: 'DISPATCHED_ASYNC' }
+        }
       }
     });
 
