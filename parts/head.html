@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#E8EDE9">
+  <meta name="description" content="SIMPLE Studio ✦ Next-level creative digital marketing & bespoke business solutions. High-converting websites, 24/7 WhatsApp AI sales reps, and high-ROI targeted ad campaigns.">
+  <title>SIMPLE ✦ Next-Level Creative Digital Marketing Solutions</title>
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="SIMPLE Studio ✦ Next-Level Digital Solutions">
+  <meta property="og:description" content="Next-level creative digital marketing solutions. High-converting websites, 24/7 AI agents, and targeted multi-platform ads. Make your work simple.">
+  <meta property="og:image" content="simple-brand-logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="simple-brand-logo.png">
+  <link rel="apple-touch-icon" href="simple-brand-logo.png">
+
+  <!-- Typography: Plus Jakarta Sans + Outfit + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CANVA EDITORIAL DESIGN TOKENS (MINIMALIST LUXURY SAGE & NOIR)
+       ========================================================================== */
+    :root {
+      --bg-sage: #E8EDE9;
+      --bg-sage-card: #E4EAE5;
+      --bg-sage-dark: #DCE3DD;
+      --bg-white: #FFFFFF;
+      --bg-offwhite: #FAFBF9;
+      --bg-dark: #08080A;
+      --bg-dark-card: #121318;
+      --bg-dark-surface: #181920;
+      --border-light: rgba(0, 0, 0, 0.08);
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --text-black: #060709;
+      --text-charcoal: #23252E;
+      --text-muted-light: #5A5E6B;
+      --text-white: #FFFFFF;
+      --text-white-sub: #A2A5B5;
+      --text-muted-dark: #707485;
+      --accent-green: #10B981;
+      --accent-green-bg: #E8F5E9;
+      --font-display: 'Outfit', -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      background-color: var(--bg-sage);
+      color: var(--text-black);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-sage);
+      color: var(--text-black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; color: inherit; border: none; background: none; }
+    button, a { -webkit-tap-highlight-color: transparent; cursor: pointer; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    .site-container {
+      width: min(1280px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    @media (max-width: 768px) {
+      .site-container {
+        width: calc(100% - 32px);
+      }
+    }
+
+    /* Universal Buttons */
+    .canva-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .canva-btn-black {
+      background: var(--text-black);
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .canva-btn-black:hover {
+      background: #1F222B;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .canva-btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--text-black);
+      color: var(--text-black);
+    }
+
+    .canva-btn-outline:hover {
+      background: var(--text-black);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .canva-btn-white {
+      background: #FFFFFF;
+      color: var(--text-black);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .canva-btn-white:hover {
+      background: #F2F4F2;
+      transform: translateY(-2px);
+    }
+
+    .canva-btn-white-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      color: #FFFFFF;
+    }
+
+    .canva-btn-white-outline:hover {
+      background: #FFFFFF;
+      color: var(--text-black);
+      transform: translateY(-2px);
+    }
+
+    .canva-btn-sm {
+      padding: 9px 20px;
+      font-size: 0.86rem;
+    }
+
+    /* Typography Utilities */
+    .eyebrow-label {
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted-light);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .eyebrow-dark {
+      color: var(--text-muted-dark);
+    }
+
+    .editorial-h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text-black);
+    }
+
+    .editorial-h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.14;
+      letter-spacing: -0.035em;
+    }
+
+    .editorial-p {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.65;
+      color: var(--text-muted-light);
+    }
+
+    /* Sticky Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(232, 237, 233, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-brand-logo {
+      height: 48px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-brand-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .nav-menu-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-charcoal);
+    }
+
+    .nav-menu-links a {
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-menu-links a:hover {
+      color: var(--text-black);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .nav-menu-links {
+        display: none;
+      }
+    }
+
+    /* Section Spacing */
+    .canva-section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .canva-section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
