@@ -50,9 +50,9 @@ vercel
 ---
 
 ## 📞 Contact Channels Built into Site
-- **WhatsApp:** [+91 9407928737](https://wa.me/919407928737)
 - **Instagram:** [@simple____agency](https://www.instagram.com/simple____agency)
 - **Email:** [simple.agency0011@gmail.com](mailto:simple.agency0011@gmail.com)
+- **Inquiry Form:** Interactive form on the website (/api/contact)
 
 ---
 
