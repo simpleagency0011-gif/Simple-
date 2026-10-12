@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | SIMPLE Agency</title>
+  <meta name="description" content="Thank you for reaching out to SIMPLE. We have received your inquiry and our team will get in touch with you within 24 business hours to discuss your project." />
+  
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:site_name" content="SIMPLE Agency" />
+  <meta property="og:title" content="Thank You | SIMPLE Agency" />
+  <meta property="og:description" content="Thank you for reaching out to SIMPLE. We have received your inquiry and our team will get in touch with you within 24 business hours." />
+  <meta property="og:image" content="https://simple-chi-nine.vercel.app/Simple_new.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SIMPLE Agency monochrome circular emblem and minimalist brand wordmark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://simple-chi-nine.vercel.app/thank-you.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thank You | SIMPLE Agency" />
+  <meta name="twitter:description" content="Thank you for contacting SIMPLE. We will get back to you within 24 hours." />
+  <meta name="twitter:image" content="https://simple-chi-nine.vercel.app/Simple_new.png" />
+
+  <!-- HTTPS Security & Favicon -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <link rel="icon" type="image/png" href="Simple_new.png" />
+  <link rel="apple-touch-icon" href="Simple_new.png" />
+
+  <!-- Google Fonts: Montserrat & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: '#000000',
+            dark: '#080808',
+            surface: '#111113',
+            borderDark: 'rgba(255, 255, 255, 0.12)'
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'Poppins', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-white flex flex-col justify-between antialiased selection:bg-white selection:text-black">
+
+  <!-- Header -->
+  <header class="py-6 px-6 sm:px-12 border-b border-white/10 bg-black/60 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="Simple_new.png" alt="SIMPLE Agency monochrome circular emblem and minimalist brand wordmark" class="h-10 w-auto object-contain" />
+      </a>
+      <a href="/" class="text-xs uppercase font-semibold text-zinc-300 hover:text-white transition-colors flex items-center gap-2">
+        <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+        <span>Return to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Thank You Hero -->
+  <main class="flex-1 flex items-center justify-center py-20 px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      
+      <!-- Check Icon Circle -->
+      <div class="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-8 shadow-[0_0_40px_rgba(16,185,129,0.2)]">
+        <i data-lucide="check" style="width: 40px; height: 40px;"></i>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="text-xs font-mono text-zinc-300 uppercase tracking-widest">INQUIRY RECEIVED · CONFIRMATION</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-4">
+        Thank you! We'll get back to you <span class="italic font-light text-zinc-300">soon.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-zinc-400 mb-10 leading-relaxed max-w-lg mx-auto">
+        Your inquiry has been successfully delivered. Our team reviews all business requests and will reply to your contact phone or email within <strong class="text-white">24 business hours</strong>.
+      </p>
+
+      <!-- Details Card -->
+      <div class="rounded-3xl border border-white/10 bg-surface p-6 sm:p-8 max-w-lg mx-auto mb-10 text-left">
+        <div class="flex items-center gap-3 text-xs font-bold text-white uppercase tracking-wider mb-4">
+          <i data-lucide="clock" class="text-emerald-400" style="width: 18px; height: 18px;"></i>
+          <span>What Happens Next?</span>
+        </div>
+        <ul class="space-y-3 text-xs text-zinc-300">
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0"></span>
+            <span>We evaluate your business requirements and selected service package.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0"></span>
+            <span>We prepare a transparent delivery scope, timeline, and asset checklist.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0"></span>
+            <span>We reach out directly via your provided contact details to schedule your kickoff.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="/" 
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] min-h-[48px]"
+        >
+          <i data-lucide="home" style="width: 16px; height: 16px;"></i>
+          <span>Return to Homepage</span>
+        </a>
+
+        <a 
+          href="/#pricing" 
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/10 transition-all min-h-[48px]"
+        >
+          <i data-lucide="tag" style="width: 16px; height: 16px;"></i>
+          <span>View Packages & Pricing</span>
+        </a>
+
+        <a 
+          href="mailto:simple.agency0011@gmail.com" 
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white/10 transition-all min-h-[48px]"
+        >
+          <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+          <span>Direct Email Follow-Up</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 px-6 text-center text-xs text-zinc-500 border-t border-white/10">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 SIMPLE Agency. All rights reserved.</div>
+      <div class="flex items-center space-x-6">
+        <a href="/" class="hover:text-zinc-300 transition-colors">Home</a>
+        <a href="/#contact" class="hover:text-zinc-300 transition-colors">Contact</a>
+        <a href="/privacy.html" class="hover:text-zinc-300 transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

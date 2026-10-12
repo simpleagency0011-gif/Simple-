@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIMPLE: Web Development, 24/7 AI Agents & Ad Run Services</title>
-  <meta name="description" content="SIMPLE provides professional website development, 24/7 conversational AI agents for WhatsApp and Instagram, and managed ad campaign execution for independent businesses. Transparent pricing and clear deliverables." />
+  <title>Home | SIMPLE Agency</title>
+  <meta name="description" content="SIMPLE crafts responsive websites, 24/7 AI chat agents, and targeted ad campaigns for businesses. Transparent pricing with clear deliverables." />
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="SIMPLE: Web Development, 24/7 AI Agents & Ad Run Services" />
-  <meta property="og:description" content="Custom websites, 24/7 AI conversational automation, and targeted ad campaign management. Transparent pricing in INR." />
-  <meta property="og:image" content="Simple_new.png" />
+  <!-- Open Graph / WhatsApp / Instagram Link Previews -->
+  <meta property="og:site_name" content="SIMPLE Agency" />
+  <meta property="og:title" content="SIMPLE | Web Development, 24/7 AI Agents & Ad Run Services" />
+  <meta property="og:description" content="Custom responsive websites, 24/7 AI conversational automation, and targeted ad campaign management with transparent pricing in INR." />
+  <meta property="og:image" content="https://simple-chi-nine.vercel.app/Simple_new.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SIMPLE Agency monochrome circular emblem and minimalist brand wordmark" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://simple-chi-nine.vercel.app/" />
 
-  <!-- Favicon -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SIMPLE | Web Development, 24/7 AI Agents & Ad Run Services" />
+  <meta name="twitter:description" content="Custom responsive websites, 24/7 AI conversational automation, and targeted ad campaign management." />
+  <meta name="twitter:image" content="https://simple-chi-nine.vercel.app/Simple_new.png" />
+
+  <!-- HTTPS Security & Favicon -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <link rel="icon" type="image/png" href="Simple_new.png" />
   <link rel="apple-touch-icon" href="Simple_new.png" />
 
-  <!-- Preload Critical Showcase Images for instant rendering -->
+  <!-- Preload Critical Showcase Images -->
   <link rel="preload" as="image" href="showcase-01.jpg" />
   <link rel="preload" as="image" href="showcase-02.jpg" />
   <link rel="preload" as="image" href="showcase-03.jpg" />
@@ -64,6 +76,15 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
 
   <style>
     ::selection {
@@ -173,10 +194,10 @@
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl' : 'bg-black/60 backdrop-blur-sm py-5'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3 group">
+            <a href="#home" className="flex items-center gap-3 group" aria-label="SIMPLE Agency Home">
               <img 
                 src="Simple_new.png" 
-                alt="SIMPLE Logo" 
+                alt="SIMPLE Agency monochrome circular emblem and minimalist brand wordmark" 
                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </a>
@@ -262,7 +283,7 @@
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40"></div>
 
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            {/* Restrained Scope Badge */}
+            {/* Scope Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span className="text-[11px] font-semibold tracking-widestTag uppercase text-zinc-300">
@@ -275,7 +296,7 @@
               Make Your Work <span className="italic font-light text-zinc-300">Simple.</span>
             </h1>
 
-            {/* Subheadline - Clear and Verifiable */}
+            {/* Subheadline */}
             <p className="text-base sm:text-xl md:text-2xl text-zinc-400 font-normal max-w-3xl mx-auto mb-10 leading-relaxed">
               Custom website development, 24/7 conversational AI agents, and hands-on advertising campaign management for growing businesses.
             </p>
@@ -328,7 +349,7 @@
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center">
                 <img 
                   src="hero-workstation.jpg" 
-                  alt="SIMPLE Digital Service Integration" 
+                  alt="Digital workstation display showing integrated responsive web layout and analytics preview" 
                   className="w-full h-full object-cover opacity-60 filter brightness-90 hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-left">
@@ -358,6 +379,7 @@
           title: "Website Development",
           desc: "A custom, responsive website built for your brand with clean navigation and contact capture.",
           image: "service-pillar-01.jpg",
+          imageAlt: "Titanium laptop showcasing modern minimalist luxury website development on obsidian display plinth",
           scope: "Up to 6 custom pages, mobile-friendly layouts, clean SEO metadata, source code handover.",
           clientProvides: "Brand logo, images, copy content, domain name credentials.",
           planLink: "#pricing"
@@ -367,6 +389,7 @@
           title: "Conversational AI Agents",
           desc: "An automated assistant operating 24/7 on WhatsApp or Instagram to answer customer questions and capture leads.",
           image: "service-pillar-02.jpg",
+          imageAlt: "Obsidian glass smartphone showing 24/7 dark mode conversational AI assistant for customer service",
           scope: "Knowledge base configuration, FAQ handling, catalog responses, automated lead capture webhook.",
           clientProvides: "Product pricing/spec sheets, standard business FAQs, Meta Business verification where applicable.",
           planLink: "#pricing"
@@ -376,6 +399,7 @@
           title: "Ad Run Services",
           desc: "Campaign setup, audience targeting, and ongoing bid optimization across Meta, Google, or YouTube.",
           image: "service-pillar-03.jpg",
+          imageAlt: "Curved ultrawide monitor displaying targeted ad campaign metrics and performance dashboard",
           scope: "Audience segmentation, conversion tracking verification, weekly bid adjustments, performance report.",
           clientProvides: "Ad creative assets (images/video clips), promotional copy, and direct ad spend budget.",
           planLink: "#pricing"
@@ -416,7 +440,7 @@
                     <div className="rounded-2xl overflow-hidden mb-6 border border-white/10 aspect-[16/9] bg-black relative shadow-inner">
                       <img 
                         src={svc.image} 
-                        alt={svc.title}
+                        alt={svc.imageAlt}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                       />
@@ -477,28 +501,32 @@
           tag: "SAMPLE WEB DELIVERABLE",
           desc: "Responsive multi-section layout demonstrating high-contrast typography, interactive pricing tables, and fast asset loading.",
           status: "Illustrative Specimen",
-          image: "showcase-01.jpg"
+          image: "showcase-01.jpg",
+          imageAlt: "Sample responsive e-commerce web platform layout with minimalist dark typography"
         },
         {
           title: "24/7 Conversational AI Workflow",
           tag: "SAMPLE AI AUTOMATION",
           desc: "Visual sample of an automated prompt tree answering business hours, catalog pricing, and capturing customer inquiries.",
           status: "Illustrative Workflow",
-          image: "showcase-02.jpg"
+          image: "showcase-02.jpg",
+          imageAlt: "Sample 24/7 conversational AI workflow mockup illustrating automated customer lead capture"
         },
         {
           title: "Multi-Platform Campaign Blueprint",
           tag: "SAMPLE AD CAMPAIGN SETUP",
           desc: "Sample campaign architecture demonstrating audience segmentation, conversion event tracking, and split-test ad sets.",
           status: "Sample Campaign Blueprint",
-          image: "showcase-03.jpg"
+          image: "showcase-03.jpg",
+          imageAlt: "Sample multi-channel advertising campaign structure blueprint across Meta and Google"
         },
         {
           title: "Verified Proof & Transparency Policy",
           tag: "CLIENT PROOF COMMITMENT",
           desc: "We strictly refrain from inventing fictitious client logos or unverified metrics. Real case studies will be published here upon completed client authorization.",
           status: "Open for New Client Projects",
-          image: "showcase-04.jpg"
+          image: "showcase-04.jpg",
+          imageAlt: "SIMPLE transparent client proof and verified case study policy commitment banner"
         }
       ];
 
@@ -552,7 +580,7 @@
                     <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] bg-zinc-900 relative group/img shadow-2xl">
                       <img 
                         src={item.image} 
-                        alt={`SIMPLE Specimen - ${item.title}`}
+                        alt={item.imageAlt}
                         loading="eager"
                         decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100 block"
@@ -576,10 +604,10 @@
                   <span>TRANSPARENCY IN REPORTING</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Real Work. Verified Results Only.
+                  Real Work. Verified Reviews Only.
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  We partner directly with businesses to design responsive websites, build reliable AI bots, and manage targeted advertising. As client campaigns mature, authorized case studies and measurable outcomes will be published here with full client consent.
+                  We partner directly with businesses to design responsive websites, build reliable AI bots, and manage targeted advertising. In accordance with our honesty standards, we display only real, authorized client reviews. Verified feedback and approved case studies will be featured here as client milestones conclude.
                 </p>
               </div>
             </div>
@@ -1048,13 +1076,13 @@
                   <li className="flex items-start gap-3">
                     <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white">Revisions Policy:</strong> [Owner to confirm: Standard delivery includes 2 rounds of design revisions prior to final site launch].
+                      <strong className="text-white">Revisions Policy:</strong> Standard delivery includes 2 rounds of design revisions prior to final site launch.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white">Delivery Timelines:</strong> [Owner to confirm: Typical delivery is 5–7 business days for websites and 3–5 business days for AI agents upon asset receipt].
+                      <strong className="text-white">Delivery Timelines:</strong> Typical delivery is 5–7 business days for websites and 3–5 business days for AI agents upon asset receipt.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -1138,12 +1166,28 @@
     }
 
     // ==========================================
-    // 8. FAQ SECTION (Concise, Unambiguous Answers)
+    // 8. FAQ SECTION (Includes Required Launch Questions)
     // ==========================================
     function FAQSection() {
-      const [openIdx, setOpenIdx] = useState(null);
+      const [openIdx, setOpenIdx] = useState(0);
 
       const faqs = [
+        {
+          q: "How long does a website take to build and launch?",
+          a: "A standard custom website (up to 6 responsive pages) typically takes 5 to 7 business days from the moment we receive your branding assets, copy, and project requirements. AI Agents take approximately 3 to 5 business days to configure, train, and test. Ad campaigns are set up within 48 to 72 hours."
+        },
+        {
+          q: "Can I edit and update the website myself after launch?",
+          a: "Yes, 100%. Upon final project handover, you receive complete ownership of your website source code. The codebase is constructed with clean, semantic, modern code and modular architecture so that you or any developer can easily update text, swap images, or add new sections at any time with zero vendor lock-in."
+        },
+        {
+          q: "Do you do Search Engine Optimization (SEO)?",
+          a: "Yes. Every website we build includes on-page SEO foundations: semantic HTML5 tags, mobile optimization across viewports, fast asset compression and preloading, unique meta titles and descriptions, Open Graph preview tags for social platforms, and a clean XML sitemap (sitemap.xml) ready for submission to Google Search Console."
+        },
+        {
+          q: "What is your refund and cancellation policy?",
+          a: "For one-time website development and AI agent configurations, work commences upon project agreement. Deposits cover dedicated technical sprint hours and are non-refundable once development has started. For monthly Ad Run management retainers, you can pause or cancel at any time with 7 days' notice prior to your next 30-day billing cycle."
+        },
         {
           q: "Is advertising budget / ad spend included in the package price?",
           a: "No. Advertising spend is paid directly by you to Meta (Facebook/Instagram) or Google through your own payment method. SIMPLE's fees cover professional campaign research, audience setup, conversion pixel configuration, daily bid monitoring, and reporting."
@@ -1161,20 +1205,8 @@
           a: "The standard AI Agent package connects to either WhatsApp Business OR Instagram Direct. The '+₹1,000' option is a one-time configuration fee that sets up and synchronizes your AI agent across BOTH platforms simultaneously with a shared business knowledge base."
         },
         {
-          q: "What ongoing third-party costs should I expect?",
-          a: "Typical third-party expenses include: (1) Domain registration (~₹499–₹990/year, owned directly by you); (2) WhatsApp Cloud API message tiers (Meta offers the first 1,000 service conversations free each month); (3) Any discretionary ad budget you choose to fund."
-        },
-        {
-          q: "How many design revisions are included?",
-          a: "[Owner to confirm: Standard delivery includes 2 rounds of design and content revisions prior to final sign-off. Additional revisions are billed at an agreed hourly rate]."
-        },
-        {
           q: "Who owns the website code and advertising accounts?",
           a: "You own 100% of your website code, domain, and ad accounts. SIMPLE requests partner access to your accounts and will never lock you out of your digital assets."
-        },
-        {
-          q: "What is your cancellation and refund policy?",
-          a: "[Owner to confirm: One-time setup deposits are non-refundable once development has commenced. For monthly ad management retainers, you can cancel or pause anytime with 7 days notice prior to your next billing cycle]."
         }
       ];
 
@@ -1189,7 +1221,7 @@
                 Frequently Asked <span className="italic font-light text-zinc-300">Questions</span>
               </h2>
               <p className="text-sm sm:text-base text-zinc-400">
-                Detailed answers covering ongoing costs, ad spend, delivery boundaries, revisions, and ownership.
+                Detailed answers covering delivery timelines, editing, SEO, refunds, ongoing costs, and ad spend.
               </p>
             </div>
 
@@ -1291,7 +1323,7 @@
     }
 
     // ==========================================
-    // 10. CONTACT SECTION & INTERACTIVE FORM
+    // 10. CONTACT SECTION & INTERACTIVE FORM (With Spam Protection)
     // ==========================================
     function Contact({ selectedPlan, onResetPlan }) {
       const [formData, setFormData] = useState({
@@ -1299,10 +1331,14 @@
         phone: "",
         service: "Website + AI Agent + Free Ad Run",
         platformOption: "Single Platform (WhatsApp or Instagram)",
-        message: ""
+        message: "",
+        hp_trap: "", // Honeypot trap field (hidden from humans)
+        verified: false // Anti-spam verification check
       });
       const [submitted, setSubmitted] = useState(false);
       const [loading, setLoading] = useState(false);
+      const [spamError, setSpamError] = useState("");
+      const renderTimestamp = useRef(Date.now());
 
       // Sync form with selectedPlan when passed from pricing cards
       useEffect(() => {
@@ -1317,13 +1353,42 @@
 
       const handleSubmit = async (e) => {
         e.preventDefault();
+        setSpamError("");
+
+        // Spam Check 1: Honeypot trap filled by bot
+        if (formData.hp_trap && formData.hp_trap.trim() !== "") {
+          console.warn("Spam detected via honeypot trap.");
+          setSubmitted(true);
+          return;
+        }
+
+        // Spam Check 2: Submission too fast (< 2 seconds is bot behavior)
+        const elapsedSeconds = (Date.now() - renderTimestamp.current) / 1000;
+        if (elapsedSeconds < 2.0) {
+          setSpamError("Please review your submission carefully before sending.");
+          return;
+        }
+
+        // Spam Check 3: Human verification checkbox
+        if (!formData.verified) {
+          setSpamError("Please check the verification box to confirm you are human.");
+          return;
+        }
+
         setLoading(true);
 
         try {
           const res = await fetch("/api/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({
+              name: formData.name,
+              phone: formData.phone,
+              service: formData.service,
+              platformOption: formData.platformOption,
+              message: formData.message,
+              submitted_at: new Date().toISOString()
+            })
           });
           if (res.ok) {
             try { await res.json(); } catch (_) {}
@@ -1408,28 +1473,28 @@
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-6">
                       <Icon name="check" size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Inquiry Successfully Received</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Thank you! We'll get back to you soon.</h3>
                     <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto leading-relaxed">
-                      Thank you, <strong className="text-white">{formData.name || "friend"}</strong>! We have recorded your interest in <strong className="text-white">{formData.service}</strong> and will reach out to <strong className="text-white">{formData.phone}</strong> within 24 business hours.
+                      Thank you, <strong className="text-white">{formData.name || "friend"}</strong>! We have recorded your inquiry for <strong className="text-white">{formData.service}</strong> and will reach out to <strong className="text-white">{formData.phone}</strong> within 24 business hours.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                      <a 
+                        href="/thank-you.html"
+                        className="bg-white text-black font-bold text-xs uppercase px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
+                      >
+                        <span>View Confirmation Page</span>
+                        <Icon name="arrow-right" size={14} />
+                      </a>
                       <button 
                         type="button"
                         onClick={() => {
                           setSubmitted(false);
                           if (onResetPlan) onResetPlan();
                         }}
-                        className="bg-white text-black font-bold text-xs uppercase px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
-                      >
-                        <span>Send Another Inquiry</span>
-                      </button>
-                      <a 
-                        href={`mailto:${EMAIL_ADDRESS}?subject=Inquiry for ${encodeURIComponent(formData.service)}&body=Name: ${encodeURIComponent(formData.name)}%0AContact: ${encodeURIComponent(formData.phone)}%0APackage: ${encodeURIComponent(formData.service)}%0AOption: ${encodeURIComponent(formData.platformOption)}%0AMessage: ${encodeURIComponent(formData.message)}`}
                         className="border border-white/20 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-full hover:bg-white/10 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
                       >
-                        <Icon name="mail" size={14} />
-                        <span>Send Direct Email Copy</span>
-                      </a>
+                        <span>Submit Another Inquiry</span>
+                      </button>
                     </div>
                   </div>
                 ) : (
@@ -1460,6 +1525,20 @@
                         )}
                       </div>
                     )}
+
+                    {/* Honeypot Trap (Invisible to humans, caught by bots) */}
+                    <div style={{ display: 'none', position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                      <label htmlFor="b_address_hp">Leave this field blank</label>
+                      <input 
+                        id="b_address_hp"
+                        type="text" 
+                        name="b_address_hp" 
+                        value={formData.hp_trap} 
+                        onChange={(e) => setFormData({...formData, hp_trap: e.target.value})} 
+                        tabIndex="-1" 
+                        autoComplete="off" 
+                      />
+                    </div>
 
                     <div>
                       <label htmlFor="user-name" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
@@ -1544,6 +1623,33 @@
                       ></textarea>
                     </div>
 
+                    {/* Anti-Spam Human Verification Checkbox */}
+                    <div className="p-3.5 rounded-xl border border-white/15 bg-surface flex items-center justify-between gap-3">
+                      <label className="flex items-center gap-3 cursor-pointer text-xs text-zinc-300 select-none">
+                        <input 
+                          type="checkbox"
+                          checked={formData.verified}
+                          onChange={(e) => {
+                            setFormData({...formData, verified: e.target.checked});
+                            setSpamError("");
+                          }}
+                          className="w-4 h-4 rounded border-white/20 bg-black text-emerald-400 focus:ring-emerald-400 cursor-pointer"
+                        />
+                        <span>I am human (Anti-Spam Verification) <span className="text-emerald-400">*</span></span>
+                      </label>
+                      <div className="flex items-center gap-1.5 text-[10px] text-zinc-500 font-mono uppercase">
+                        <Icon name="shield-check" size={14} className="text-emerald-400" />
+                        <span>Protected</span>
+                      </div>
+                    </div>
+
+                    {spamError && (
+                      <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs flex items-center gap-2">
+                        <Icon name="alert-circle" size={16} />
+                        <span>{spamError}</span>
+                      </div>
+                    )}
+
                     <div className="pt-2">
                       <button 
                         type="submit" 
@@ -1564,7 +1670,7 @@
     }
 
     // ==========================================
-    // 11. FOOTER COMPONENT (NexStudio Watermark Style)
+    // 11. FOOTER COMPONENT
     // ==========================================
     function Footer() {
       return (
@@ -1573,8 +1679,8 @@
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12">
               
               <div className="md:col-span-2">
-                <a href="#home" className="inline-block mb-4">
-                  <img src="Simple_new.png" alt="SIMPLE Logo" className="h-12 w-auto object-contain" />
+                <a href="#home" className="inline-block mb-4" aria-label="SIMPLE Agency Home">
+                  <img src="Simple_new.png" alt="SIMPLE Agency monochrome circular emblem and minimalist brand wordmark" className="h-12 w-auto object-contain" />
                 </a>
                 <p className="text-xs uppercase tracking-widestTag text-zinc-400 font-semibold mb-4">
                   MAKE YOUR WORK SIMPLE
@@ -1589,14 +1695,14 @@
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-                    aria-label="Instagram profile"
+                    aria-label="Visit SIMPLE on Instagram"
                   >
                     <Icon name="instagram" size={18} />
                   </a>
                   <a 
                     href={`mailto:${EMAIL_ADDRESS}`} 
                     className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-                    aria-label="Email address"
+                    aria-label="Send Email to SIMPLE"
                   >
                     <Icon name="mail" size={18} />
                   </a>
@@ -1663,9 +1769,9 @@
 
             <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
               <div className="flex space-x-6">
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Terms]</span>
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Privacy]</span>
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Cancellation]</span>
+                <a href="/privacy.html" className="hover:text-zinc-300 transition-colors">Privacy Policy</a>
+                <a href="/thank-you.html" className="hover:text-zinc-300 transition-colors">Thank You Page</a>
+                <a href="/404.html" className="hover:text-zinc-300 transition-colors">404 Page</a>
               </div>
               <div className="text-zinc-400">
                 © 2026 SIMPLE. All rights reserved.
@@ -1677,7 +1783,62 @@
     }
 
     // ==========================================
-    // 12. FLOATING AI ASSISTANT WIDGET
+    // 12. COOKIE CONSENT BANNER COMPONENT
+    // ==========================================
+    function CookieBanner() {
+      const [visible, setVisible] = useState(false);
+
+      useEffect(() => {
+        const consent = localStorage.getItem("simple_cookie_consent");
+        if (!consent) {
+          // Show after brief delay
+          const timer = setTimeout(() => setVisible(true), 1200);
+          return () => clearTimeout(timer);
+        }
+      }, []);
+
+      const handleAccept = (choice) => {
+        localStorage.setItem("simple_cookie_consent", choice);
+        setVisible(false);
+      };
+
+      if (!visible) return null;
+
+      return (
+        <div className="fixed bottom-6 left-4 sm:left-6 z-50 max-w-md w-[calc(100vw-2rem)] rounded-2xl border border-white/20 bg-zinc-950/95 backdrop-blur-xl p-5 shadow-2xl animate-in fade-in slide-in-from-bottom-4">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center shrink-0 mt-0.5">
+              <Icon name="shield" size={16} />
+            </div>
+            <div className="flex-1">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">
+                Cookie & Analytics Consent
+              </h4>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                We use cookies and anonymized analytics to measure traffic and improve your browsing experience. Read our <a href="/privacy.html" className="text-white underline hover:text-zinc-300">Privacy Policy</a>.
+              </p>
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={() => handleAccept("accepted_all")}
+                  className="bg-white text-black font-bold text-[11px] uppercase tracking-wider px-4 py-2 rounded-full hover:bg-zinc-200 transition-all min-h-[36px]"
+                >
+                  Accept All
+                </button>
+                <button 
+                  onClick={() => handleAccept("necessary_only")}
+                  className="border border-white/20 text-zinc-300 hover:text-white font-medium text-[11px] uppercase tracking-wider px-4 py-2 rounded-full hover:bg-white/10 transition-all min-h-[36px]"
+                >
+                  Necessary Only
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ==========================================
+    // 13. FLOATING AI ASSISTANT WIDGET
     // ==========================================
     function FloatingChatWidget() {
       const [isOpen, setIsOpen] = useState(false);
@@ -1696,6 +1857,18 @@
 
       const getSmartBotReply = (userMsg) => {
         const lower = userMsg.toLowerCase();
+        if (["time", "long", "duration", "day", "days", "turnaround", "delivery"].some(k => lower.includes(k))) {
+          return "Our websites typically take 5–7 business days to build and launch from the date we receive your content and requirements. AI Agents take about 3–5 business days, and Ad campaigns are configured within 48–72 hours.";
+        }
+        if (["edit", "change", "update", "myself", "own", "ownership"].some(k => lower.includes(k))) {
+          return "Yes! You own 100% of your website source code. The layout is built cleanly with modern HTML, CSS, and modular components so you or any developer can easily edit and update it yourself at any time.";
+        }
+        if (["seo", "search", "google", "rank", "ranking"].some(k => lower.includes(k))) {
+          return "Yes, every website includes SEO foundations: semantic HTML5 tags, mobile optimization, fast asset loading, unique meta titles/descriptions, Open Graph social tags, and a sitemap.xml ready for Google Search Console indexing.";
+        }
+        if (["refund", "cancel", "cancellation", "policy"].some(k => lower.includes(k))) {
+          return "For one-time website and AI agent builds, deposits cover dedicated development hours and are non-refundable once work begins. For monthly Ad Run retainers, you can pause or cancel at any time with 7 days' notice prior to your next cycle.";
+        }
         if (["site", "website", "web", "page", "developer", "design"].some(k => lower.includes(k))) {
           return "Our Website package is a one-time fee of ₹6,999 (or ₹11,999 bundled with an AI Agent). It includes up to 6 responsive pages, contact forms, and 30 days of complimentary ad campaign setup on 1 platform. You own 100% of your website code with zero lock-in.";
         }
@@ -1810,16 +1983,22 @@
 
               <div className="px-3 py-2 bg-black/90 border-t border-white/10 flex gap-2 overflow-x-auto text-[11px] whitespace-nowrap">
                 <button 
-                  onClick={() => handleSend("What do website plans include?")}
+                  onClick={() => handleSend("How long does a website take?")}
                   className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
                 >
-                  Websites
+                  Timelines
                 </button>
                 <button 
-                  onClick={() => handleSend("What is the AI Agent setup?")}
+                  onClick={() => handleSend("Can I edit the website myself?")}
                   className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
                 >
-                  AI Agents
+                  Self-Editing
+                </button>
+                <button 
+                  onClick={() => handleSend("Do you do SEO?")}
+                  className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
+                >
+                  SEO
                 </button>
                 <button 
                   onClick={() => handleSend("What is the pricing list?")}
@@ -1862,10 +2041,48 @@
     }
 
     // ==========================================
-    // MAIN APP COMPONENT
+    // MAIN APP COMPONENT (With Dynamic Unique Titles)
     // ==========================================
     function App() {
       const [selectedPlan, setSelectedPlan] = useState(null);
+
+      // Pre-Launch Check 2: Dynamic unique page titles per section
+      useEffect(() => {
+        const sectionTitles = {
+          home: "Home | SIMPLE Agency",
+          services: "Services | SIMPLE Agency",
+          capabilities: "Sample Capabilities | SIMPLE Agency",
+          pricing: "Pricing & Plans | SIMPLE Agency",
+          boundaries: "Service Boundaries | SIMPLE Agency",
+          faq: "Frequently Asked Questions | SIMPLE Agency",
+          about: "About Us | SIMPLE Agency",
+          contact: "Contact & Inquiries | SIMPLE Agency"
+        };
+
+        const handleScroll = () => {
+          const sections = Object.keys(sectionTitles);
+          let currentSection = "home";
+
+          for (const s of sections) {
+            const el = document.getElementById(s);
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              if (rect.top <= 200 && rect.bottom >= 200) {
+                currentSection = s;
+                break;
+              }
+            }
+          }
+
+          if (sectionTitles[currentSection] && document.title !== sectionTitles[currentSection]) {
+            document.title = sectionTitles[currentSection];
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
       const handleSelectPlan = (planInfo) => {
         setSelectedPlan(planInfo);
@@ -1894,6 +2111,7 @@
             <Contact selectedPlan={selectedPlan} onResetPlan={handleResetPlan} />
           </main>
           <Footer />
+          <CookieBanner />
           <FloatingChatWidget />
         </div>
       );
