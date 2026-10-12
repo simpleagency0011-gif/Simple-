@@ -16,26 +16,27 @@ DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 FAQ_RESPONSES = {
     "website": (
-        "We build modern, ultra-responsive websites tailored for your business that look stunning "
-        "on every phone, tablet, and computer. Our packages start at ₹12,999 (discounted from ₹14,999) "
-        "and even include a FREE Ad Run!"
+        "Our Website package is a one-time fee of ₹6,999 (or ₹11,999 bundled with an AI Agent). "
+        "It includes up to 6 custom responsive pages, contact intake form, and 30 days of complimentary ad campaign setup "
+        "on 1 platform. You own 100% of your website code with zero recurring agency retainers."
     ),
     "ai agent": (
-        "Our AI Agents operate 24/7 on WhatsApp or Instagram to instantly answer customer questions, "
-        "share product details, take inquiries, and capture leads while you sleep. "
-        "Single platform starts at ₹6,999 (regular ₹8,999), or both platforms for ₹7,999 (regular ₹9,999)."
+        "Our AI Agents operate 24/7 on WhatsApp or Instagram to answer customer questions, "
+        "share product specs/catalogs, and capture leads while you sleep. "
+        "Setup is a one-time fee of ₹3,999 for a single platform, or ₹4,999 for both WhatsApp + Instagram synchronized."
     ),
     "ad run": (
-        "We run and optimize your ads across Instagram, Facebook, YouTube, and X. "
-        "Please note: we manage, target, and optimize the ad runs; client provides the ad creatives. "
-        "Standalone ad running is ₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms."
+        "Our Ad Run service covers audience research, tracking setup, daily bid checks, and weekly reporting "
+        "across Instagram, Facebook, Google, YouTube, or X. Management is ₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms. "
+        "Important: Ad spend is paid directly by you to Meta/Google; client supplies ad creative graphics/videos."
     ),
     "pricing": (
-        "Here are our current limited period discounted packages:\n"
-        "1. Website + AI Agent + Free Ad Run (Best Value): ₹11,999 (was ₹14,999)\n"
-        "2. Website + Free Ad Run (up to 6 pages): ₹6,999 (was ₹9,999)\n"
-        "3. AI Agent + Free Ad Run: ₹3,999 (was ₹5,999)\n"
-        "4. Ad Run Only: ₹1,599/mo (was ₹2,499/mo)."
+        "Here are our transparent rates in INR:\n"
+        "1. Website + AI Agent + Free Ad Run: ₹11,999 (Both AI: ₹12,999) [One-time implementation]\n"
+        "2. Website + Free Ad Run: ₹6,999 [One-time development]\n"
+        "3. AI Agent + Free Ad Run: ₹3,999 (Both AI: ₹4,999) [One-time setup]\n"
+        "4. Ad Run Only: ₹1,599/mo (1 platform) or ₹2,699/mo (2 platforms) [Monthly recurring].\n"
+        "Note: 'Free Ad Run' covers 30 days of campaign management. Direct ad spend is funded separately by the client."
     ),
     "contact": (
         "You can reach us directly:\n"
@@ -64,9 +65,10 @@ class SimpleHandler(http.server.SimpleHTTPRequestHandler):
             name = payload.get('name', 'Anonymous')
             contact_info = payload.get('phone', '')
             service = payload.get('service', 'General Inquiry')
+            platform_opt = payload.get('platformOption', '')
             message = payload.get('message', '')
             
-            print(f"[CONTACT INQUIRY] From: {name} | Contact: {contact_info} | Service: {service} | Message: {message}")
+            print(f"[CONTACT INQUIRY] From: {name} | Contact: {contact_info} | Service: {service} | Option: {platform_opt} | Message: {message}")
 
             response_data = {
                 "status": "success",

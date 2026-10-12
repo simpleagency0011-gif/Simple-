@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIMPLE: Websites, AI Agents & Ad Run Services</title>
-  <meta name="description" content="SIMPLE delivers modern responsive websites, 24/7 AI customer service agents on WhatsApp & Instagram, and targeted ad run campaigns for your business. Make your work simple." />
+  <title>SIMPLE: Web Development, 24/7 AI Agents & Ad Run Services</title>
+  <meta name="description" content="SIMPLE provides professional website development, 24/7 conversational AI agents for WhatsApp and Instagram, and managed ad campaign execution for independent businesses. Transparent pricing and clear deliverables." />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="SIMPLE: Websites, AI Agents & Ad Run Services" />
-  <meta property="og:description" content="Websites, AI agents and ad campaigns for your business, all in one place. Make your work simple." />
+  <meta property="og:title" content="SIMPLE: Web Development, 24/7 AI Agents & Ad Run Services" />
+  <meta property="og:description" content="Custom websites, 24/7 AI conversational automation, and targeted ad campaign management. Transparent pricing in INR." />
   <meta property="og:image" content="Simple_new.png" />
   <meta property="og:type" content="website" />
 
@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" href="Simple_new.png" />
   <link rel="apple-touch-icon" href="Simple_new.png" />
 
-  <!-- Preload Critical Images for instant rendering -->
+  <!-- Preload Critical Showcase Images for instant rendering -->
   <link rel="preload" as="image" href="showcase-01.jpg" />
   <link rel="preload" as="image" href="showcase-02.jpg" />
   <link rel="preload" as="image" href="showcase-03.jpg" />
@@ -25,7 +25,7 @@
   <link rel="preload" as="image" href="service-pillar-02.jpg" />
   <link rel="preload" as="image" href="service-pillar-03.jpg" />
 
-  <!-- Google Fonts: Montserrat & Poppins for geometric luxury branding -->
+  <!-- Google Fonts: Montserrat & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600&display=swap" rel="stylesheet" />
@@ -51,16 +51,6 @@
           },
           letterSpacing: {
             widestTag: '0.28em',
-          },
-          animation: {
-            'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 5s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' },
-            }
           }
         }
       }
@@ -70,13 +60,12 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- React 18 & ReactDOM & Babel for Component Architecture -->
+  <!-- React 18 & ReactDOM & Babel -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <style>
-    /* Custom Scrollbar and Selection */
     ::selection {
       background: #ffffff;
       color: #000000;
@@ -104,7 +93,6 @@
       padding: 0;
     }
 
-    /* Ambient Subtle Grid & Radial Glow */
     .hero-glow {
       background: radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
     }
@@ -113,7 +101,6 @@
       box-shadow: 0 0 35px -5px rgba(255, 255, 255, 0.08);
     }
 
-    /* Clean Luxury Agency Wordmark in Footer (No internal glyph stroke artifacts) */
     .footer-brand-display {
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
@@ -174,15 +161,16 @@
       const navLinks = [
         { label: "Home", href: "#home" },
         { label: "Services", href: "#services" },
+        { label: "Capabilities", href: "#capabilities" },
         { label: "Pricing", href: "#pricing" },
-        { label: "How It Works", href: "#how-it-works" },
-        { label: "Why SIMPLE", href: "#why-simple" },
-        { label: "Projects", href: "#projects" },
+        { label: "Boundaries", href: "#boundaries" },
+        { label: "FAQ", href: "#faq" },
+        { label: "About", href: "#about" },
         { label: "Contact", href: "#contact" }
       ];
 
       return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl' : 'bg-black/50 backdrop-blur-sm py-5'}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/10 py-3.5 shadow-2xl' : 'bg-black/60 backdrop-blur-sm py-5'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group">
@@ -194,7 +182,7 @@
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-7 text-xs lg:text-sm tracking-wide font-medium text-zinc-300">
+            <nav className="hidden lg:flex items-center space-x-6 text-xs xl:text-sm tracking-wide font-medium text-zinc-300">
               {navLinks.map((link) => (
                 <a 
                   key={link.label}
@@ -207,21 +195,21 @@
             </nav>
 
             {/* Action Button */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4">
               <a 
                 href="#pricing"
                 className="bg-white text-black text-xs uppercase font-semibold px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-all duration-200 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.35)] tracking-wider"
               >
-                Get Started
+                View Packages
               </a>
             </div>
 
             {/* Mobile Hamburger Button */}
-            <div className="flex md:hidden">
+            <div className="flex lg:hidden">
               <button 
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="text-zinc-300 hover:text-white p-2 rounded-lg focus:outline-none"
-                aria-label="Toggle Navigation"
+                className="text-zinc-300 hover:text-white p-2 rounded-lg focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
+                aria-label="Toggle Navigation Menu"
               >
                 <Icon name={mobileOpen ? "x" : "menu"} size={24} />
               </button>
@@ -230,8 +218,8 @@
 
           {/* Mobile Dropdown Menu */}
           {mobileOpen && (
-            <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 px-6 pt-4 pb-7 transition-all">
-              <div className="flex flex-col space-y-4">
+            <div className="lg:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 px-6 pt-4 pb-7 transition-all">
+              <div className="flex flex-col space-y-3">
                 {navLinks.map((link) => (
                   <a 
                     key={link.label}
@@ -242,18 +230,18 @@
                     {link.label}
                   </a>
                 ))}
-                <div className="pt-2 flex flex-col gap-3">
+                <div className="pt-3 flex flex-col gap-3">
                   <a 
                     href="#pricing"
                     onClick={() => setMobileOpen(false)}
-                    className="w-full text-center bg-white text-black text-xs font-bold uppercase py-3 rounded-full hover:bg-zinc-200 tracking-wider shadow-md"
+                    className="w-full text-center bg-white text-black text-xs font-bold uppercase py-3.5 rounded-full hover:bg-zinc-200 tracking-wider shadow-md"
                   >
-                    Get Started
+                    View Packages
                   </a>
                   <a 
                     href="#contact"
                     onClick={() => setMobileOpen(false)}
-                    className="w-full text-center border border-white/25 text-white text-xs font-bold uppercase py-3 rounded-full hover:bg-white/10 tracking-wider flex items-center justify-center gap-2"
+                    className="w-full text-center border border-white/25 text-white text-xs font-bold uppercase py-3.5 rounded-full hover:bg-white/10 tracking-wider flex items-center justify-center gap-2"
                   >
                     <Icon name="mail" size={16} /> Contact Us
                   </a>
@@ -270,16 +258,15 @@
     // ==========================================
     function Hero() {
       return (
-        <section id="home" className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden hero-glow">
-          {/* Subtle Ambient Background Grids */}
+        <section id="home" className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden hero-glow">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40"></div>
 
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            {/* Pill Badge */}
+            {/* Restrained Scope Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-md mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span className="text-[11px] font-semibold tracking-widestTag uppercase text-zinc-300">
-                ✦ ALL-IN-ONE GROWTH AGENCY
+                ✦ DIGITAL SERVICES & AUTOMATION
               </span>
             </div>
 
@@ -288,47 +275,51 @@
               Make Your Work <span className="italic font-light text-zinc-300">Simple.</span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - Clear and Verifiable */}
             <p className="text-base sm:text-xl md:text-2xl text-zinc-400 font-normal max-w-3xl mx-auto mb-10 leading-relaxed">
-              Websites, AI agents and ad campaigns for your business, all in one place.
+              Custom website development, 24/7 conversational AI agents, and hands-on advertising campaign management for growing businesses.
             </p>
 
             {/* Call To Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
               <a 
                 href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] group min-h-[48px]"
               >
-                <span>Get Started</span>
+                <span>View Packages & Pricing</span>
                 <Icon name="arrow-right" size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
 
               <a 
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-semibold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-white/[0.08] transition-all duration-300 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-semibold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-white/[0.08] transition-all duration-300 group min-h-[48px]"
               >
                 <Icon name="mail" size={18} className="text-white group-hover:scale-110 transition-transform" />
-                <span>Contact Us</span>
+                <span>Submit Inquiry</span>
               </a>
             </div>
 
-            {/* Key Value Metrics Showcase */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-white/10 max-w-4xl mx-auto text-left">
+            {/* Verifiable Deliverables Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-white/10 max-w-5xl mx-auto text-left">
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
-                <div className="text-xs text-zinc-400 tracking-wider uppercase font-medium mt-1">Mobile Responsive</div>
+                <div className="text-xs text-zinc-400 font-mono tracking-wider uppercase">SERVICE 01</div>
+                <div className="text-lg font-bold text-white mt-1">Multi-Device Web Design</div>
+                <div className="text-xs text-zinc-400 mt-1">Up to 6 pages, clean semantic markup, fast load foundation</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white">24/7</div>
-                <div className="text-xs text-zinc-400 tracking-wider uppercase font-medium mt-1">AI Agent Replies</div>
+                <div className="text-xs text-zinc-400 font-mono tracking-wider uppercase">SERVICE 02</div>
+                <div className="text-lg font-bold text-white mt-1">24/7 AI Chat Assistant</div>
+                <div className="text-xs text-zinc-400 mt-1">WhatsApp & Instagram automated customer FAQ handling</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white">FREE</div>
-                <div className="text-xs text-zinc-400 tracking-wider uppercase font-medium mt-1">Ad Run Setup</div>
+                <div className="text-xs text-zinc-400 font-mono tracking-wider uppercase">SERVICE 03</div>
+                <div className="text-lg font-bold text-white mt-1">30-Day Ad Campaign Setup</div>
+                <div className="text-xs text-zinc-400 mt-1">Complimentary campaign setup & management with core packages</div>
               </div>
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white">5+</div>
-                <div className="text-xs text-zinc-400 tracking-wider uppercase font-medium mt-1">Ad Platforms</div>
+                <div className="text-xs text-zinc-400 font-mono tracking-wider uppercase">HONESTY POLICY</div>
+                <div className="text-lg font-bold text-white mt-1">Ad Spend Billed Direct</div>
+                <div className="text-xs text-zinc-400 mt-1">Client funds ad accounts directly; no markup on advertising budget</div>
               </div>
             </div>
 
@@ -337,17 +328,17 @@
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center">
                 <img 
                   src="hero-workstation.jpg" 
-                  alt="SIMPLE Digital Production" 
+                  alt="SIMPLE Digital Service Integration" 
                   className="w-full h-full object-cover opacity-60 filter brightness-90 hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-left">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[11px] font-semibold text-zinc-200 w-max mb-3 border border-white/15">
                     <Icon name="sparkles" size={14} className="text-white" />
-                    <span>INTEGRATED WORKFLOW</span>
+                    <span>ILLUSTRATIVE SYSTEM ARCHITECTURE</span>
                   </div>
-                  <h3 className="text-xl sm:text-3xl font-bold text-white mb-2">Websites · 24/7 AI Automation · Target Ads</h3>
+                  <h3 className="text-xl sm:text-3xl font-bold text-white mb-2">Websites · Automated AI Agents · Targeted Ad Runs</h3>
                   <p className="text-xs sm:text-sm text-zinc-400 max-w-xl">
-                    A synchronized growth engine designed to capture visitors, answer customer questions immediately, and drive steady revenue.
+                    An integrated digital infrastructure designed to display your offerings cleanly, answer customer questions instantly, and target prospective buyers.
                   </p>
                 </div>
               </div>
@@ -365,40 +356,28 @@
         {
           num: "#01",
           title: "Website Development",
-          desc: "A professional website for your business that works on every device.",
+          desc: "A custom, responsive website built for your brand with clean navigation and contact capture.",
           image: "service-pillar-01.jpg",
-          features: [
-            "100% responsive across mobile, tablet & desktop",
-            "Ultra-fast loading speed & SEO architecture",
-            "Modern, premium UI/UX crafted for conversions",
-            "Custom domain, hosting integration & SSL security"
-          ],
+          scope: "Up to 6 custom pages, mobile-friendly layouts, clean SEO metadata, source code handover.",
+          clientProvides: "Brand logo, images, copy content, domain name credentials.",
           planLink: "#pricing"
         },
         {
           num: "#02",
-          title: "AI Agents",
-          desc: "An AI agent on WhatsApp or Instagram that answers customers’ questions about your business (for example a clothing brand or a notebook shop), around the clock.",
+          title: "Conversational AI Agents",
+          desc: "An automated assistant operating 24/7 on WhatsApp or Instagram to answer customer questions and capture leads.",
           image: "service-pillar-02.jpg",
-          features: [
-            "24/7 instant replies — never miss a midnight inquiry",
-            "Connects directly with WhatsApp & Instagram",
-            "Answers FAQs, product specs, pricing & catalogs",
-            "Captures customer contact details automatically"
-          ],
+          scope: "Knowledge base configuration, FAQ handling, catalog responses, automated lead capture webhook.",
+          clientProvides: "Product pricing/spec sheets, standard business FAQs, Meta Business verification where applicable.",
           planLink: "#pricing"
         },
         {
           num: "#03",
           title: "Ad Run Services",
-          desc: "We run your ads on Instagram, Facebook, YouTube, X and similar platforms. (Note: we run the ads; we do not create ad creatives.)",
+          desc: "Campaign setup, audience targeting, and ongoing bid optimization across Meta, Google, or YouTube.",
           image: "service-pillar-03.jpg",
-          features: [
-            "Cross-platform management: Instagram, Facebook, YouTube & X",
-            "Laser-focused audience targeting & budget optimization",
-            "Continuous bid management & conversion tracking",
-            "Transparent weekly ROAS & performance insights"
-          ],
+          scope: "Audience segmentation, conversion tracking verification, weekly bid adjustments, performance report.",
+          clientProvides: "Ad creative assets (images/video clips), promotional copy, and direct ad spend budget.",
           planLink: "#pricing"
         }
       ];
@@ -406,22 +385,20 @@
       return (
         <section id="services" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20">
               <div>
                 <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
-                  ✦ WHAT WE DO
+                  ✦ CORE DELIVERABLES
                 </div>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
                   Our <span className="italic font-light text-zinc-300">Services</span>
                 </h2>
               </div>
               <p className="mt-4 md:mt-0 text-sm sm:text-base text-zinc-400 max-w-md">
-                Three core pillars designed to take your business from hidden to profitable, managed by one agile team.
+                Three focused capabilities designed to establish your web presence, automate customer inquiries, and execute digital advertising.
               </p>
             </div>
 
-            {/* 3 NexStudio Style Cards Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {servicesData.map((svc, idx) => (
                 <div 
@@ -429,15 +406,13 @@
                   className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-6 sm:p-8 flex flex-col justify-between hover:border-white/30 transition-all duration-300 card-glow group"
                 >
                   <div>
-                    {/* Top Number & Tag */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="text-zinc-500 font-mono text-sm tracking-wider">{svc.num}</span>
                       <span className="text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-300">
-                        SERVICE
+                        SERVICE PILLAR
                       </span>
                     </div>
 
-                    {/* Card Image Preview */}
                     <div className="rounded-2xl overflow-hidden mb-6 border border-white/10 aspect-[16/9] bg-black relative shadow-inner">
                       <img 
                         src={svc.image} 
@@ -448,7 +423,6 @@
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
                     </div>
 
-                    {/* Card Title & Desc */}
                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-zinc-200 transition-colors">
                       {svc.title}
                     </h3>
@@ -456,24 +430,24 @@
                       {svc.desc}
                     </p>
 
-                    {/* Features List */}
-                    <ul className="space-y-2.5 mb-8 border-t border-white/5 pt-6">
-                      {svc.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="text-xs text-zinc-300 flex items-start gap-2.5">
-                          <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="space-y-4 mb-8 border-t border-white/10 pt-5 text-xs">
+                      <div>
+                        <span className="font-semibold text-zinc-200 uppercase tracking-wider block mb-1">What SIMPLE Delivers:</span>
+                        <p className="text-zinc-400">{svc.scope}</p>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-zinc-200 uppercase tracking-wider block mb-1">What You Provide:</span>
+                        <p className="text-zinc-400">{svc.clientProvides}</p>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Bottom Action */}
                   <div className="pt-4 border-t border-white/10">
                     <a 
                       href={svc.planLink}
-                      className="w-full inline-flex items-center justify-between text-xs font-bold tracking-wider uppercase text-white hover:text-zinc-300 group/btn py-2"
+                      className="w-full inline-flex items-center justify-between text-xs font-bold tracking-wider uppercase text-white hover:text-zinc-300 group/btn py-2 min-h-[44px]"
                     >
-                      <span>Explore Plan Pricing</span>
+                      <span>Explore Package Rates</span>
                       <Icon name="arrow-up-right" size={16} className="transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
                     </a>
                   </div>
@@ -481,12 +455,12 @@
               ))}
             </div>
 
-            {/* Banner Callout for Ad Creatives Note */}
-            <div className="mt-12 p-4 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.02] flex items-center gap-4 text-xs sm:text-sm text-zinc-400">
-              <Icon name="info" size={20} className="text-white shrink-0" />
-              <span>
-                <strong className="text-white font-semibold">Important Note on Ad Run:</strong> We execute, target, monitor, and optimize your ad campaigns for maximum performance. Clients provide the ad creative assets (images/videos).
-              </span>
+            {/* Clear Ad Spend Boundary Notice */}
+            <div className="mt-12 p-5 rounded-2xl border border-white/15 bg-white/[0.02] flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs sm:text-sm text-zinc-300">
+              <Icon name="info" size={22} className="text-white shrink-0 mt-0.5 sm:mt-0" />
+              <div>
+                <strong className="text-white font-semibold">Important Scope Boundary on Ad Runs:</strong> SIMPLE provides professional campaign configuration, audience targeting, tracking pixel setup, and weekly bid optimization. Clients supply creative graphics/videos and fund their ad spend directly to the advertising network.
+              </div>
             </div>
           </div>
         </section>
@@ -494,42 +468,157 @@
     }
 
     // ==========================================
-    // 4. PRICING SECTION (4 Packages in INR)
+    // 4. SAMPLE CAPABILITIES & DELIVERABLES (Replacing Unfinished Portfolio)
     // ==========================================
-    function Pricing() {
-      // Toggle state for Package 1 & 3 (single platform vs dual platform)
+    function Capabilities() {
+      const sampleItems = [
+        {
+          title: "Modern Business Web Architecture",
+          tag: "SAMPLE WEB DELIVERABLE",
+          desc: "Responsive multi-section layout demonstrating high-contrast typography, interactive pricing tables, and fast asset loading.",
+          status: "Illustrative Specimen",
+          image: "showcase-01.jpg"
+        },
+        {
+          title: "24/7 Conversational AI Workflow",
+          tag: "SAMPLE AI AUTOMATION",
+          desc: "Visual sample of an automated prompt tree answering business hours, catalog pricing, and capturing customer inquiries.",
+          status: "Illustrative Workflow",
+          image: "showcase-02.jpg"
+        },
+        {
+          title: "Multi-Platform Campaign Blueprint",
+          tag: "SAMPLE AD CAMPAIGN SETUP",
+          desc: "Sample campaign architecture demonstrating audience segmentation, conversion event tracking, and split-test ad sets.",
+          status: "Sample Campaign Blueprint",
+          image: "showcase-03.jpg"
+        },
+        {
+          title: "Verified Proof & Transparency Policy",
+          tag: "CLIENT PROOF COMMITMENT",
+          desc: "We strictly refrain from inventing fictitious client logos or unverified metrics. Real case studies will be published here upon completed client authorization.",
+          status: "Open for New Client Projects",
+          image: "showcase-04.jpg"
+        }
+      ];
+
+      return (
+        <section id="capabilities" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
+              <div>
+                <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
+                  ✦ TECHNICAL STANDARDS
+                </div>
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
+                  Sample <span className="italic font-light text-zinc-300">Capabilities</span>
+                </h2>
+              </div>
+              <p className="mt-4 md:mt-0 text-sm sm:text-base text-zinc-400 max-w-md">
+                Demonstrating our design aesthetics, engineering structure, and campaign setup standards.
+              </p>
+            </div>
+
+            {/* Plain Truth Notice Banner */}
+            <div className="mb-12 p-4 sm:p-5 rounded-2xl border border-white/15 bg-surface text-xs sm:text-sm text-zinc-300 flex items-start sm:items-center gap-3">
+              <Icon name="shield" size={20} className="text-white shrink-0 mt-0.5 sm:mt-0" />
+              <div>
+                <strong className="text-white">Illustrative Work Notice:</strong> The cards below demonstrate sample deliverables and technical capabilities produced by SIMPLE. They are illustrative previews rather than third-party client endorsements or fabricated performance claims.
+              </div>
+            </div>
+
+            {/* 4 Clean Deliverable Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {sampleItems.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-6 sm:p-8 card-glow hover:border-white/30 transition-all duration-300 group flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-xs mb-4">
+                      <span className="font-semibold text-zinc-400 uppercase tracking-wider">{item.tag}</span>
+                      <span className="text-[11px] font-mono text-zinc-500 uppercase px-2.5 py-0.5 rounded bg-white/5 border border-white/10">
+                        {item.status}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-zinc-200 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 mb-6 leading-relaxed">
+                      {item.desc}
+                    </p>
+
+                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] bg-zinc-900 relative group/img shadow-2xl">
+                      <img 
+                        src={item.image} 
+                        alt={`SIMPLE Specimen - ${item.title}`}
+                        loading="eager"
+                        decoding="async"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100 block"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none flex items-end p-4">
+                        <span className="text-[11px] font-semibold tracking-wider uppercase text-zinc-300 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow">
+                          {item.status}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Plain Statement on Future Client Case Studies */}
+            <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-surface via-black to-surface p-8 sm:p-10 text-center relative overflow-hidden">
+              <div className="max-w-2xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-zinc-300 mb-4">
+                  <Icon name="check" size={14} className="text-white" />
+                  <span>TRANSPARENCY IN REPORTING</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                  Real Work. Verified Results Only.
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  We partner directly with businesses to design responsive websites, build reliable AI bots, and manage targeted advertising. As client campaigns mature, authorized case studies and measurable outcomes will be published here with full client consent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ==========================================
+    // 5. PRICING SECTION (Transparent, Unambiguous INR)
+    // ==========================================
+    function Pricing({ onSelectPlan }) {
       const [pkg1Dual, setPkg1Dual] = useState(false);
       const [pkg3Dual, setPkg3Dual] = useState(false);
       const [pkg4Platforms, setPkg4Platforms] = useState(1);
 
       return (
-        <section id="pricing" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
+        <section id="pricing" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
               <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
-                ✦ TRANSPARENT INVESTMENT
+                ✦ CLEAR INVESTMENT
               </div>
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
-                Simple, Honest <span className="italic font-light text-zinc-300">Pricing</span>
+                Transparent <span className="italic font-light text-zinc-300">Pricing</span>
               </h2>
-              <p className="text-sm sm:text-base text-zinc-400 mb-5">
-                Clear INR pricing with zero hidden retainers. Regular price struck through, discounted rate highlighted.
+              <p className="text-sm sm:text-base text-zinc-400">
+                Clear pricing in INR. Each package outlines what is included, billing frequency, service duration, and exact boundaries.
               </p>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span>LIMITED PERIOD DISCOUNT ACTIVE — SAVE UP TO ₹3,000</span>
-              </div>
             </div>
 
             {/* 4 Pricing Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch mb-16">
               
-              {/* CARD 1: BEST VALUE */}
+              {/* CARD 1: WEBSITE + AI AGENT + FREE AD RUN */}
               <div className="rounded-3xl border-2 border-white bg-gradient-to-b from-surface to-black p-6 sm:p-8 flex flex-col justify-between relative shadow-[0_0_35px_rgba(255,255,255,0.12)] card-glow">
-                {/* Top Badge */}
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-black tracking-widestTag uppercase px-4 py-1 rounded-full shadow-lg">
-                  BEST VALUE · ALL-IN-ONE
+                  COMPREHENSIVE SUITE
                 </div>
 
                 <div>
@@ -538,20 +627,22 @@
                     Website + AI Agent + Free Ad Run
                   </h3>
                   <p className="text-xs text-zinc-400 mb-6">
-                    Our complete flagship package to launch, automate & promote your business.
+                    Full digital foundation: custom website, 24/7 AI chat agent, and 30 days of complimentary ad campaign setup & management.
                   </p>
 
                   {/* Platform Choice Toggle */}
                   <div className="bg-black/60 p-1 rounded-xl border border-white/15 mb-6 flex text-[11px] font-semibold">
                     <button 
                       onClick={() => setPkg1Dual(false)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${!pkg1Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${!pkg1Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="Single AI platform"
                     >
                       WhatsApp or IG
                     </button>
                     <button 
                       onClick={() => setPkg1Dual(true)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${pkg1Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${pkg1Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="Dual AI platforms"
                     >
                       Both (+₹1,000)
                     </button>
@@ -559,51 +650,61 @@
 
                   {/* Pricing Display */}
                   <div className="mb-6 pb-6 border-b border-white/10">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-zinc-500 line-through text-lg sm:text-xl font-semibold">
-                        {pkg1Dual ? "₹15,999" : "₹14,999"}
-                      </span>
+                    <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">
                         {pkg1Dual ? "₹12,999" : "₹11,999"}
                       </span>
+                      <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
+                        One-Time Fee
+                      </span>
                     </div>
-                    <span className="text-[11px] text-emerald-400 font-semibold tracking-wide block mt-1">
-                      Save ₹3,000 (Limited Period Offer)
+                    <span className="text-[11px] text-zinc-400 block mt-2">
+                      Includes 30 days ad campaign management. Ad spend paid separately by client.
                     </span>
                   </div>
 
-                  {/* Included features */}
-                  <ul className="space-y-2.5 mb-8 text-xs text-zinc-300">
+                  {/* What is Included */}
+                  <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Included:</div>
+                  <ul className="space-y-2 mb-6 text-xs text-zinc-300">
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Custom professional website (up to 6 pages)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>24/7 AI Agent on {pkg1Dual ? "both WhatsApp + Instagram" : "WhatsApp or Instagram"}</span>
-                    </li>
-                    <li className="flex items-start gap-2 font-semibold text-white">
                       <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                      <span>FREE Ad Run campaign setup & management</span>
+                      <span>Custom business website (up to 6 responsive pages)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Multi-device responsive & SEO ready</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>24/7 AI Agent setup on {pkg1Dual ? "both WhatsApp + Instagram" : "WhatsApp or Instagram"}</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>30 days dedicated support & maintenance</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span><strong>Free Ad Run:</strong> 30 days campaign setup & active bid management (1 platform)</span>
                     </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>30 days post-launch technical bug-fix support</span>
+                    </li>
+                  </ul>
+
+                  {/* Boundaries & Post-period */}
+                  <div className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Exclusions & After 30 Days:</div>
+                  <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
+                    <li>• Ad spend is funded directly by client to Meta/Google.</li>
+                    <li>• Client supplies creative graphics/videos.</li>
+                    <li>• After 30 days, website & bot remain yours 100% with no recurring agency fee. Ongoing ad management optional at ₹1,599/mo.</li>
                   </ul>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="w-full text-center bg-white text-black font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-zinc-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center justify-center gap-2"
+                <button 
+                  onClick={() => onSelectPlan({
+                    name: "Website + AI Agent + Free Ad Run",
+                    rate: pkg1Dual ? "₹12,999 (One-time)" : "₹11,999 (One-time)",
+                    platform: pkg1Dual ? "Both Platforms (WhatsApp + Instagram)" : "Single Platform (WhatsApp or Instagram)",
+                    billing: "One-time implementation fee"
+                  })}
+                  className="w-full text-center bg-white text-black font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-zinc-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Icon name="arrow-right" size={15} />
-                  <span>Choose This Plan</span>
-                </a>
+                  <span>Select Package</span>
+                </button>
               </div>
 
               {/* CARD 2: WEBSITE + FREE AD RUN */}
@@ -614,50 +715,61 @@
                     Website + Free Ad Run
                   </h3>
                   <p className="text-xs text-zinc-400 mb-6">
-                    Basic business website (up to 6 pages) with complimentary ad campaign execution.
+                    A professional web presence (up to 6 pages) with 30 days of complimentary ad campaign setup on 1 platform.
                   </p>
 
                   <div className="mb-6 pb-6 border-b border-white/10 pt-7">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-zinc-500 line-through text-lg sm:text-xl font-semibold">₹9,999</span>
+                    <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">₹6,999</span>
+                      <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
+                        One-Time Fee
+                      </span>
                     </div>
-                    <span className="text-[11px] text-emerald-400 font-semibold tracking-wide block mt-1">
-                      Save ₹3,000 (Limited Period Offer)
+                    <span className="text-[11px] text-zinc-400 block mt-2">
+                      Includes 30 days ad campaign setup on 1 platform. Ad spend paid direct to ad network.
                     </span>
                   </div>
 
-                  <ul className="space-y-2.5 mb-8 text-xs text-zinc-300">
+                  <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Included:</div>
+                  <ul className="space-y-2 mb-6 text-xs text-zinc-300">
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Up to 6 custom designed pages</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Works seamlessly across all screen sizes</span>
-                    </li>
-                    <li className="flex items-start gap-2 font-semibold text-white">
                       <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                      <span>FREE Ad Run setup on 1 platform</span>
+                      <span>Up to 6 custom responsive web pages</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Contact form & lead intake integration</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Contact inquiry form & SEO metadata foundation</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Fast speed & SEO best practices</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span><strong>Free Ad Run:</strong> 30 days ad setup on 1 platform (Meta or Google)</span>
                     </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>30 days post-launch technical support</span>
+                    </li>
+                  </ul>
+
+                  <div className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Exclusions & After 30 Days:</div>
+                  <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
+                    <li>• Ad spend funded directly by client.</li>
+                    <li>• Client supplies images/copy for website and ads.</li>
+                    <li>• Site is 100% yours; optional ongoing ad management at ₹1,599/mo.</li>
                   </ul>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+                <button 
+                  onClick={() => onSelectPlan({
+                    name: "Website + Free Ad Run",
+                    rate: "₹6,999 (One-time)",
+                    platform: "1 Ad Platform (Meta or Google)",
+                    billing: "One-time development fee"
+                  })}
+                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Icon name="arrow-right" size={15} />
-                  <span>Choose This Plan</span>
-                </a>
+                  <span>Select Package</span>
+                </button>
               </div>
 
               {/* CARD 3: AI AGENT + FREE AD RUN */}
@@ -668,70 +780,81 @@
                     AI Agent + Free Ad Run
                   </h3>
                   <p className="text-xs text-zinc-400 mb-6">
-                    Automate customer conversations on WhatsApp and Instagram 24/7.
+                    Automate customer service on WhatsApp or Instagram with 30 days of complimentary ad campaign setup.
                   </p>
 
                   {/* Platform Choice Toggle */}
                   <div className="bg-black/60 p-1 rounded-xl border border-white/15 mb-6 flex text-[11px] font-semibold">
                     <button 
                       onClick={() => setPkg3Dual(false)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${!pkg3Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${!pkg3Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="Single AI platform"
                     >
                       WhatsApp or IG
                     </button>
                     <button 
                       onClick={() => setPkg3Dual(true)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${pkg3Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${pkg3Dual ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="Dual AI platforms"
                     >
                       Both (+₹1,000)
                     </button>
                   </div>
 
                   <div className="mb-6 pb-6 border-b border-white/10">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-zinc-500 line-through text-lg sm:text-xl font-semibold">
-                        {pkg3Dual ? "₹6,999" : "₹5,999"}
-                      </span>
+                    <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">
                         {pkg3Dual ? "₹4,999" : "₹3,999"}
                       </span>
+                      <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
+                        One-Time Setup
+                      </span>
                     </div>
-                    <span className="text-[11px] text-emerald-400 font-semibold tracking-wide block mt-1">
-                      Save ₹2,000 (Limited Period Offer)
+                    <span className="text-[11px] text-zinc-400 block mt-2">
+                      Dual option (+₹1,000) is a one-time fee to synchronize both WhatsApp & Instagram.
                     </span>
                   </div>
 
-                  <ul className="space-y-2.5 mb-8 text-xs text-zinc-300">
+                  <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Included:</div>
+                  <ul className="space-y-2 mb-6 text-xs text-zinc-300">
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Custom trained AI on your catalog & FAQs</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Custom AI configured on your business FAQs & catalog</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
                       <span>Active on {pkg3Dual ? "both WhatsApp + Instagram" : "WhatsApp or Instagram"}</span>
                     </li>
-                    <li className="flex items-start gap-2 font-semibold text-white">
+                    <li className="flex items-start gap-2">
                       <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                      <span>FREE Ad Run setup on 1 platform</span>
+                      <span><strong>Free Ad Run:</strong> 30 days campaign setup on 1 platform</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Instant 24/7 automated inquiry handling</span>
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Lead capture & notification routing</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Customer lead capture & routing</span>
-                    </li>
+                  </ul>
+
+                  <div className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Exclusions & Notes:</div>
+                  <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
+                    <li>• Ad spend funded directly by client.</li>
+                    <li>• Meta API conversation fees beyond free tier (1,000 conv/mo free) billed direct by Meta.</li>
+                    <li>• Client provides catalog, pricing, and FAQ sheets.</li>
                   </ul>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+                <button 
+                  onClick={() => onSelectPlan({
+                    name: "AI Agent + Free Ad Run",
+                    rate: pkg3Dual ? "₹4,999 (One-time)" : "₹3,999 (One-time)",
+                    platform: pkg3Dual ? "Both Platforms (WhatsApp + Instagram)" : "Single Platform (WhatsApp or Instagram)",
+                    billing: "One-time setup fee"
+                  })}
+                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Icon name="arrow-right" size={15} />
-                  <span>Choose This Plan</span>
-                </a>
+                  <span>Select Package</span>
+                </button>
               </div>
 
               {/* CARD 4: AD RUN ONLY */}
@@ -742,20 +865,22 @@
                     Ad Run Only
                   </h3>
                   <p className="text-xs text-zinc-400 mb-6">
-                    Targeted campaign execution and bid optimization across key ad platforms.
+                    Hands-on monthly campaign management, audience targeting, and bid optimization on rolling retainer.
                   </p>
 
                   {/* Platforms Choice Toggle */}
                   <div className="bg-black/60 p-1 rounded-xl border border-white/15 mb-6 flex text-[11px] font-semibold">
                     <button 
                       onClick={() => setPkg4Platforms(1)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${pkg4Platforms === 1 ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${pkg4Platforms === 1 ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="1 ad platform"
                     >
                       1 Platform
                     </button>
                     <button 
                       onClick={() => setPkg4Platforms(2)}
-                      className={`flex-1 py-1.5 rounded-lg transition-all ${pkg4Platforms === 2 ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      className={`flex-1 py-2 rounded-lg transition-all min-h-[36px] ${pkg4Platforms === 2 ? 'bg-white text-black font-bold shadow' : 'text-zinc-400 hover:text-white'}`}
+                      aria-label="2 ad platforms"
                     >
                       2 Platforms
                     </button>
@@ -763,53 +888,86 @@
 
                   <div className="mb-6 pb-6 border-b border-white/10">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-zinc-500 line-through text-lg sm:text-xl font-semibold">
-                        {pkg4Platforms === 1 ? "₹2,499" : "₹3,999"}
-                      </span>
                       <span className="text-3xl sm:text-4xl font-black text-white">
                         {pkg4Platforms === 1 ? "₹1,599" : "₹2,699"}
                       </span>
-                      <span className="text-xs text-zinc-400 font-medium">/ month</span>
+                      <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
+                        / month
+                      </span>
                     </div>
-                    <span className="text-[11px] text-emerald-400 font-semibold tracking-wide block mt-1">
-                      Save {pkg4Platforms === 1 ? "₹900" : "₹1,300"} (Limited Period Offer)
+                    <span className="text-[11px] text-zinc-400 block mt-2">
+                      Monthly recurring management retainer. Pause or cancel anytime before next cycle.
                     </span>
                   </div>
 
-                  {/* Notice callout */}
-                  <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 mb-4 text-[11px] text-zinc-300">
-                    <strong>Note:</strong> We run & optimize ads; client provides creative images/videos.
-                  </div>
+                  <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Included:</div>
+                  <ul className="space-y-2 mb-6 text-xs text-zinc-300">
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>{pkg4Platforms === 1 ? "1 Selected Platform" : "2 Selected Platforms"} (Instagram, Facebook, Google, YouTube, or X)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Audience research, targeting setup & tracking check</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Weekly bid management & budget allocation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="check" size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                      <span>Monthly performance metrics summary</span>
+                    </li>
+                  </ul>
 
-                  <ul className="space-y-2.5 mb-8 text-xs text-zinc-300">
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Instagram, Facebook, YouTube, or X</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Target audience & interest calibration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>Daily budget & bid adjustments</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Icon name="check" size={14} className="text-white mt-0.5 shrink-0" />
-                      <span>ROAS monitoring & monthly reports</span>
-                    </li>
+                  <div className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">Exclusions & Notes:</div>
+                  <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
+                    <li>• Ad spend funded directly by client.</li>
+                    <li>• Client provides ad creative images/videos.</li>
+                    <li>• Billed every 30 days until cancelled by client.</li>
                   </ul>
                 </div>
 
-                <a 
-                  href="#contact"
-                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
+                <button 
+                  onClick={() => onSelectPlan({
+                    name: "Ad Run Only",
+                    rate: pkg4Platforms === 1 ? "₹1,599/month" : "₹2,699/month",
+                    platform: pkg4Platforms === 1 ? "1 Ad Platform" : "2 Ad Platforms",
+                    billing: "Monthly recurring management fee"
+                  })}
+                  className="w-full text-center border border-white/20 text-white font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 min-h-[48px]"
                 >
                   <Icon name="arrow-right" size={15} />
-                  <span>Choose This Plan</span>
-                </a>
+                  <span>Select Package</span>
+                </button>
               </div>
 
+            </div>
+
+            {/* Third-Party & Auxiliary Costs Disclosure Bar */}
+            <div className="rounded-3xl border border-white/10 bg-surface p-6 sm:p-8">
+              <div className="flex items-center gap-2.5 text-xs font-bold text-white uppercase tracking-wider mb-4">
+                <Icon name="info" size={18} className="text-white shrink-0" />
+                <span>Auxiliary Costs & Third-Party Requirements Disclosure</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-zinc-400">
+                <div>
+                  <strong className="text-white block mb-1">Domain Name:</strong>
+                  Not included in core package. Client registers and owns their domain directly (~₹499–₹990/year on Hostinger/GoDaddy) or [Owner to confirm: Optional 1st-year domain registration assistance].
+                </div>
+                <div>
+                  <strong className="text-white block mb-1">Web Hosting:</strong>
+                  Deployed on modern static edge networks (GitHub Pages or Vercel) at zero ongoing hosting cost for standard traffic, or deployed to client-managed hosting.
+                </div>
+                <div>
+                  <strong className="text-white block mb-1">Third-Party APIs:</strong>
+                  Meta WhatsApp Cloud API provides the first 1,000 service conversations free per month. Additional conversations and AI model tokens are paid direct at cost.
+                </div>
+                <div>
+                  <strong className="text-white block mb-1">Taxes & Governance:</strong>
+                  All rates listed in Indian Rupees (INR). [Owner to confirm: Applicable taxes / GST status based on business registration].
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -817,24 +975,121 @@
     }
 
     // ==========================================
-    // 5. HOW IT WORKS SECTION (3 Steps)
+    // 6. SERVICE BOUNDARIES & CLIENT REQUIREMENTS
+    // ==========================================
+    function ServiceBoundaries() {
+      return (
+        <section id="boundaries" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+              <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
+                ✦ CLEAR EXPECTATIONS
+              </div>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+                Service <span className="italic font-light text-zinc-300">Boundaries</span>
+              </h2>
+              <p className="text-sm sm:text-base text-zinc-400">
+                To ensure transparent delivery, here is exactly what the client supplies versus what SIMPLE executes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Left Column: What Customer Provides */}
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8 sm:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+                    <Icon name="layers" size={20} />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">What You (The Client) Provide</h3>
+                </div>
+                <ul className="space-y-4 text-xs sm:text-sm text-zinc-300">
+                  <li className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">1</span>
+                    <div>
+                      <strong className="text-white">Ad Creative Assets:</strong> Images, video clips, brand logo, and promotional hooks for ad campaigns. SIMPLE drafts copy and targeting.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">2</span>
+                    <div>
+                      <strong className="text-white">Direct Ad Spend Budget:</strong> Paid directly by your business to Meta or Google using your own credit card or UPI.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
+                    <div>
+                      <strong className="text-white">Business Information:</strong> Product specs, pricing tiers, FAQs, return policies, and brand materials to train the AI agent accurately.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">4</span>
+                    <div>
+                      <strong className="text-white">Account Access:</strong> Delegated partner access to Meta Business Suite, Google Ads account, or domain DNS settings.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right Column: What SIMPLE Delivers & Guarantees */}
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8 sm:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
+                    <Icon name="shield-check" size={20} />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">What SIMPLE Delivers</h3>
+                </div>
+                <ul className="space-y-4 text-xs sm:text-sm text-zinc-300">
+                  <li className="flex items-start gap-3">
+                    <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white">Source Code & Ownership:</strong> Complete ownership of your website source code and all digital accounts.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white">Revisions Policy:</strong> [Owner to confirm: Standard delivery includes 2 rounds of design revisions prior to final site launch].
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white">Delivery Timelines:</strong> [Owner to confirm: Typical delivery is 5–7 business days for websites and 3–5 business days for AI agents upon asset receipt].
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Icon name="check" size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white">Support & Handover:</strong> 30 days of complimentary post-launch bug-fix support and guided administrative walkthrough.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // ==========================================
+    // 7. HOW IT WORKS SECTION (Simple 3 Steps)
     // ==========================================
     function HowItWorks() {
       const steps = [
         {
           num: "01",
-          title: "Tell us about your business",
-          desc: "Share your business details, products, catalog, and requirements through a brief chat or inquiry form."
+          title: "Share your business information",
+          desc: "Send us your product list, business FAQs, branding assets, and target audience requirements through a quick intake form or message."
         },
         {
           num: "02",
-          title: "We build your website / AI agent and set up your ads",
-          desc: "Our agile team crafts your responsive website, configures your 24/7 AI agent, and maps your ad run targeting."
+          title: "We build, configure & test",
+          desc: "We develop your responsive website, configure the conversational AI prompt flows, and map your ad campaign targeting structure."
         },
         {
           num: "03",
-          title: "You get more customers, simply",
-          desc: "Your business goes live. Visitors convert smoothly, your AI answers inquiries round-the-clock, and your ads bring steady buyers."
+          title: "Review, launch & hand over",
+          desc: "You test the website and AI agent, request revisions, and we launch your site and begin campaign execution with complete account ownership."
         }
       ];
 
@@ -843,13 +1098,13 @@
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
               <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
-                ✦ SIMPLE PROCESS
+                ✦ PROJECT WORKFLOW
               </div>
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
                 How It <span className="italic font-light text-zinc-300">Works</span>
               </h2>
               <p className="mt-4 text-sm sm:text-base text-zinc-400">
-                A seamless 3-step journey from onboarding to continuous customer acquisition.
+                A straightforward three-step delivery process with clear milestones.
               </p>
             </div>
 
@@ -872,7 +1127,7 @@
                   </div>
                   <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-zinc-400">
                     <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                    <span>Step {i + 1} of 3</span>
+                    <span>Milestone {i + 1} of 3</span>
                   </div>
                 </div>
               ))}
@@ -883,78 +1138,84 @@
     }
 
     // ==========================================
-    // 6. WHY SIMPLE SECTION (Screenshot 1 Layout)
+    // 8. FAQ SECTION (Concise, Unambiguous Answers)
     // ==========================================
-    function WhySimple() {
-      const reasons = [
+    function FAQSection() {
+      const [openIdx, setOpenIdx] = useState(null);
+
+      const faqs = [
         {
-          icon: "layers",
-          title: "One Team for Everything",
-          desc: "Website, AI agents, and ad campaigns handled seamlessly under one roof. No juggling multiple freelancers."
+          q: "Is advertising budget / ad spend included in the package price?",
+          a: "No. Advertising spend is paid directly by you to Meta (Facebook/Instagram) or Google through your own payment method. SIMPLE's fees cover professional campaign research, audience setup, conversion pixel configuration, daily bid monitoring, and reporting."
         },
         {
-          icon: "zap",
-          title: "Fast Delivery",
-          desc: "Rapid sprint turnaround to get your digital presence live and attracting real inquiries quickly."
+          q: "Are the website and AI agent prices one-time fees or recurring retainers?",
+          a: "They are one-time implementation fees. Once the website and AI agent are deployed, you own the website source code and bot configurations. There is no mandatory agency retainer to keep your website live."
         },
         {
-          icon: "gift",
-          title: "Free Ad Run Included",
-          desc: "Every main website and AI agent package comes with free ad campaign setup and management."
+          q: "What does 'Free Ad Run' include and what happens after 30 days?",
+          a: "Core packages include 30 calendar days of complimentary ad campaign setup and active bid management on 1 platform. After the 30 days conclude, you can choose to manage the ads yourself at no cost, pause campaigns, or optionally retain SIMPLE for ongoing monthly management (₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms)."
         },
         {
-          icon: "shield-check",
-          title: "Affordable Pricing",
-          desc: "Transparent, honest INR pricing engineered for growing brands with zero hidden monthly fees."
+          q: "What does the '+₹1,000' option for AI Agents add?",
+          a: "The standard AI Agent package connects to either WhatsApp Business OR Instagram Direct. The '+₹1,000' option is a one-time configuration fee that sets up and synchronizes your AI agent across BOTH platforms simultaneously with a shared business knowledge base."
         },
         {
-          icon: "sparkles",
-          title: "Simple & No-Hassle Process",
-          desc: "Clear milestones, zero technical confusion, and transparent communication every step of the way."
+          q: "What ongoing third-party costs should I expect?",
+          a: "Typical third-party expenses include: (1) Domain registration (~₹499–₹990/year, owned directly by you); (2) WhatsApp Cloud API message tiers (Meta offers the first 1,000 service conversations free each month); (3) Any discretionary ad budget you choose to fund."
+        },
+        {
+          q: "How many design revisions are included?",
+          a: "[Owner to confirm: Standard delivery includes 2 rounds of design and content revisions prior to final sign-off. Additional revisions are billed at an agreed hourly rate]."
+        },
+        {
+          q: "Who owns the website code and advertising accounts?",
+          a: "You own 100% of your website code, domain, and ad accounts. SIMPLE requests partner access to your accounts and will never lock you out of your digital assets."
+        },
+        {
+          q: "What is your cancellation and refund policy?",
+          a: "[Owner to confirm: One-time setup deposits are non-refundable once development has commenced. For monthly ad management retainers, you can cancel or pause anytime with 7 days notice prior to your next billing cycle]."
         }
       ];
 
       return (
-        <section id="why-simple" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="faq" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
               <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
-                ✦ WHY PARTNER WITH US
+                ✦ CLEAR ANSWERS
               </div>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-                Why <span className="italic font-light text-zinc-300">SIMPLE</span>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+                Frequently Asked <span className="italic font-light text-zinc-300">Questions</span>
               </h2>
-              <p className="mt-4 text-sm sm:text-base text-zinc-400">
-                We eliminate the complexity of digital marketing so you can focus on running your business.
+              <p className="text-sm sm:text-base text-zinc-400">
+                Detailed answers covering ongoing costs, ad spend, delivery boundaries, revisions, and ownership.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {reasons.slice(0, 3).map((item, idx) => (
+            <div className="space-y-4">
+              {faqs.map((faq, idx) => (
                 <div 
                   key={idx}
-                  className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8 hover:border-white/30 transition-all duration-300 card-glow"
+                  className="rounded-2xl border border-white/10 bg-surface overflow-hidden transition-all"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white mb-6">
-                    <Icon name={item.icon} size={22} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8 max-w-4xl mx-auto">
-              {reasons.slice(3, 5).map((item, idx) => (
-                <div 
-                  key={idx}
-                  className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8 hover:border-white/30 transition-all duration-300 card-glow"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white mb-6">
-                    <Icon name={item.icon} size={22} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">{item.desc}</p>
+                  <button 
+                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                    className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors focus:outline-none min-h-[52px]"
+                    aria-expanded={openIdx === idx}
+                  >
+                    <span className="text-sm sm:text-base font-bold text-white">{faq.q}</span>
+                    <Icon 
+                      name={openIdx === idx ? "minus" : "plus"} 
+                      size={18} 
+                      className="text-zinc-400 shrink-0 transition-transform" 
+                    />
+                  </button>
+                  {openIdx === idx && (
+                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-white/5">
+                      {faq.a}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -964,121 +1225,63 @@
     }
 
     // ==========================================
-    // 7. PROJECTS & TESTIMONIALS SECTION (Placeholders)
+    // 9. AGENCY IDENTITY & BUSINESS DETAILS (Credibility)
     // ==========================================
-    function ProjectsAndTestimonials() {
-      const projects = [
-        {
-          title: "E-Commerce Brand Platform",
-          category: "WEBSITE DEVELOPMENT",
-          date: "OCT 2026",
-          status: "Available Client Slot",
-          image: "showcase-01.jpg"
-        },
-        {
-          title: "24/7 AI Sales Assistant",
-          category: "WHATSAPP & INSTAGRAM AI",
-          date: "NOV 2026",
-          status: "Ready for Your Brand",
-          image: "showcase-02.jpg"
-        },
-        {
-          title: "Performance Ad Campaign",
-          category: "META & GOOGLE ADS",
-          date: "DEC 2026",
-          status: "Next Campaign Booking",
-          image: "showcase-03.jpg"
-        },
-        {
-          title: "Next Client Growth Story",
-          category: "COMING SOON",
-          date: "2026",
-          status: "In Production",
-          image: "showcase-04.jpg"
-        }
-      ];
-
+    function AboutAgency() {
       return (
-        <section id="projects" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
+        <section id="about" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
               <div>
                 <div className="text-xs font-semibold tracking-widestTag uppercase text-zinc-400 mb-3">
-                  ✦ EDITABLE SHOWCASE
+                  ✦ BUSINESS PROFILE
                 </div>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-                  Featured <span className="italic font-light text-zinc-300">Projects</span>
+                  About <span className="italic font-light text-zinc-300">SIMPLE</span>
                 </h2>
               </div>
               <p className="mt-4 md:mt-0 text-sm sm:text-base text-zinc-400 max-w-md">
-                NexStudio layout filled with editable placeholder items. Your brand's success story belongs right here.
+                Independent digital services studio delivering websites, conversational automation, and advertising execution.
               </p>
             </div>
 
-            {/* Projects Grid (Screenshot 5 & 6 Style) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-              {projects.map((proj, idx) => (
-                <div 
-                  key={idx}
-                  className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-6 sm:p-8 card-glow hover:border-white/30 transition-all duration-300 group flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between text-xs mb-4">
-                      <span className="font-semibold text-zinc-400 uppercase tracking-wider">{proj.category}</span>
-                      <span className="text-zinc-500 font-mono">{proj.date}</span>
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-zinc-200 transition-colors">
-                      {proj.title}
-                    </h3>
-
-                    <div className="inline-flex items-center gap-2 text-xs text-emerald-400 font-medium mb-6">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                      <span>{proj.status}</span>
-                    </div>
-
-                    {/* Image container */}
-                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[16/9] bg-zinc-900 relative group/img shadow-2xl">
-                      <img 
-                        src={proj.image} 
-                        alt={`SIMPLE Project - ${proj.title}`}
-                        loading="eager"
-                        decoding="async"
-                        onError={(e) => {
-                          if (!e.target.dataset.retried) {
-                            e.target.dataset.retried = "1";
-                            e.target.src = proj.image + "?retry=" + Date.now();
-                          }
-                        }}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100 block"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none flex items-end p-4">
-                        <span className="text-[11px] font-semibold tracking-wider uppercase text-zinc-300 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow">
-                          {proj.status}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white mb-6">
+                  <Icon name="shield" size={20} />
                 </div>
-              ))}
-            </div>
-
-            {/* Testimonials Banner (Placeholders) */}
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-surface via-black to-surface p-8 sm:p-12 text-center relative overflow-hidden">
-              <div className="max-w-2xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-zinc-300 mb-6">
-                  <Icon name="quote" size={14} className="text-white" />
-                  <span>CLIENT PARTNER STORIES</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  "Your Success Story Here"
-                </h3>
-                <p className="text-sm sm:text-base text-zinc-400 mb-6 leading-relaxed">
-                  We don't invent fake client reviews. When you partner with SIMPLE, your real revenue growth, website launch, and AI customer responses will be celebrated right here.
+                <h3 className="text-lg font-bold text-white mb-2">Agency Identity</h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                  SIMPLE is an independent studio focused on lean web development, conversational bots, and performance marketing.
                 </p>
-                <div className="text-xs font-semibold uppercase tracking-widest text-zinc-300">
-                  RESERVED FOR YOUR TESTIMONIAL · SIMPLE AGENCY 2026
+                <div className="text-xs text-zinc-500 font-mono">
+                  Tagline: MAKE YOUR WORK SIMPLE
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white mb-6">
+                  <Icon name="clock" size={20} />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Location & Service Area</h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                  Serving businesses across India and remote clients globally. Communications conducted in English and Hindi.
+                </p>
+                <div className="text-xs text-zinc-400 font-mono bg-white/5 p-2 rounded-lg border border-white/10">
+                  [Owner to specify: Registered city / state]
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-surface to-black p-8">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white mb-6">
+                  <Icon name="layers" size={20} />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Founder & Team Info</h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                  Delivered with direct communication and technical accountability.
+                </p>
+                <div className="text-xs text-zinc-400 font-mono bg-white/5 p-2 rounded-lg border border-white/10">
+                  [Owner to add founder / team background details]
                 </div>
               </div>
             </div>
@@ -1088,54 +1291,29 @@
     }
 
     // ==========================================
-    // 8. CTA SECTION (Screenshot 10 & 12 Style)
+    // 10. CONTACT SECTION & INTERACTIVE FORM
     // ==========================================
-    function CTASection() {
-      return (
-        <section className="py-20 sm:py-28 bg-white text-black relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-                Ready to make your <br />
-                <span className="italic font-light">work simple?</span>
-              </h2>
-              <p className="mt-4 text-base sm:text-lg text-zinc-600 max-w-xl">
-                Get your custom website, 24/7 AI agent, and targeted ad campaigns running in one unified sprint.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-              <a 
-                href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black text-white font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-zinc-800 transition-all shadow-xl"
-              >
-                <span>Explore Pricing</span>
-                <Icon name="arrow-right" size={16} />
-              </a>
-              <a 
-                href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center border-2 border-black text-black font-bold text-sm tracking-wide px-8 py-4 rounded-full hover:bg-black hover:text-white transition-all"
-              >
-                <span>Contact Us</span>
-              </a>
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    // ==========================================
-    // 9. CONTACT SECTION & INTERACTIVE FORM
-    // ==========================================
-    function Contact() {
+    function Contact({ selectedPlan, onResetPlan }) {
       const [formData, setFormData] = useState({
         name: "",
         phone: "",
-        service: "Website + AI Agent + Free Ad Run (Best Value)",
+        service: "Website + AI Agent + Free Ad Run",
+        platformOption: "Single Platform (WhatsApp or Instagram)",
         message: ""
       });
       const [submitted, setSubmitted] = useState(false);
       const [loading, setLoading] = useState(false);
+
+      // Sync form with selectedPlan when passed from pricing cards
+      useEffect(() => {
+        if (selectedPlan && selectedPlan.name) {
+          setFormData((prev) => ({
+            ...prev,
+            service: selectedPlan.name,
+            platformOption: selectedPlan.platform || prev.platformOption
+          }));
+        }
+      }, [selectedPlan]);
 
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -1173,7 +1351,7 @@
                   Let's Connect <span className="italic font-light text-zinc-300">Directly.</span>
                 </h2>
                 <p className="text-base text-zinc-400 leading-relaxed mb-10 max-w-lg">
-                  Ready to upgrade your website, deploy a 24/7 AI agent, or launch high-converting ad runs? Send us a quick inquiry below or reach us directly on Instagram and Email.
+                  Submit an inquiry below or reach out directly on Instagram and Email. We respond to all project requests within 24 business hours.
                 </p>
 
                 {/* Direct Contact Cards */}
@@ -1183,13 +1361,14 @@
                     href={INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface hover:border-white/30 transition-all card-glow group"
+                    className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface hover:border-white/30 transition-all card-glow group min-h-[64px]"
+                    aria-label="Visit SIMPLE on Instagram"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform shrink-0">
                       <Icon name="instagram" size={24} />
                     </div>
                     <div>
-                      <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Instagram</div>
+                      <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Instagram Direct Message</div>
                       <div className="text-base font-bold text-white">@simple____agency</div>
                     </div>
                   </a>
@@ -1197,25 +1376,26 @@
                   {/* Email */}
                   <a 
                     href={`mailto:${EMAIL_ADDRESS}`}
-                    className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface hover:border-white/30 transition-all card-glow group"
+                    className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface hover:border-white/30 transition-all card-glow group min-h-[64px]"
+                    aria-label="Send Email to SIMPLE"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shrink-0">
                       <Icon name="mail" size={24} />
                     </div>
                     <div>
-                      <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Email Inquiry</div>
-                      <div className="text-base font-bold text-white">{EMAIL_ADDRESS}</div>
+                      <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Official Email</div>
+                      <div className="text-base font-bold text-white break-all">{EMAIL_ADDRESS}</div>
                     </div>
                   </a>
 
-                  {/* Response Commitment */}
-                  <div className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                  {/* Response Window */}
+                  <div className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-surface min-h-[64px]">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                       <Icon name="clock" size={24} />
                     </div>
                     <div>
                       <div className="text-xs text-zinc-400 font-medium uppercase tracking-wider">Response Window</div>
-                      <div className="text-base font-bold text-white">Within 24 Hours</div>
+                      <div className="text-base font-bold text-white">Within 24 Business Hours</div>
                     </div>
                   </div>
                 </div>
@@ -1224,74 +1404,138 @@
               {/* Right Column: Contact Form */}
               <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-surface to-black p-8 sm:p-10 shadow-2xl relative">
                 {submitted ? (
-                  <div className="text-center py-12">
+                  <div className="text-center py-10">
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-6">
                       <Icon name="check" size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Inquiry Received!</h3>
-                    <p className="text-sm text-zinc-400 mb-8 max-w-sm mx-auto">
-                      Thank you! We have received your inquiry and our team will get in touch with you shortly.
+                    <h3 className="text-2xl font-bold text-white mb-2">Inquiry Successfully Received</h3>
+                    <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto leading-relaxed">
+                      Thank you, <strong className="text-white">{formData.name || "friend"}</strong>! We have recorded your interest in <strong className="text-white">{formData.service}</strong> and will reach out to <strong className="text-white">{formData.phone}</strong> within 24 business hours.
                     </p>
-                    <button 
-                      type="button"
-                      onClick={() => setSubmitted(false)}
-                      className="bg-white text-black font-bold text-xs uppercase px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all tracking-wider inline-flex items-center gap-2"
-                    >
-                      <span>Send Another Inquiry</span>
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                      <button 
+                        type="button"
+                        onClick={() => {
+                          setSubmitted(false);
+                          if (onResetPlan) onResetPlan();
+                        }}
+                        className="bg-white text-black font-bold text-xs uppercase px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
+                      >
+                        <span>Send Another Inquiry</span>
+                      </button>
+                      <a 
+                        href={`mailto:${EMAIL_ADDRESS}?subject=Inquiry for ${encodeURIComponent(formData.service)}&body=Name: ${encodeURIComponent(formData.name)}%0AContact: ${encodeURIComponent(formData.phone)}%0APackage: ${encodeURIComponent(formData.service)}%0AOption: ${encodeURIComponent(formData.platformOption)}%0AMessage: ${encodeURIComponent(formData.message)}`}
+                        className="border border-white/20 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-full hover:bg-white/10 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
+                      >
+                        <Icon name="mail" size={14} />
+                        <span>Send Direct Email Copy</span>
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <h3 className="text-xl font-bold text-white mb-2">Send an Inquiry</h3>
-                    <p className="text-xs text-zinc-400 mb-6">
-                      Fill out your details below and we will get back to you within 24 hours.
-                    </p>
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">Send an Inquiry</h3>
+                      <p className="text-xs text-zinc-400">
+                        Fill in your details below and we will get back to you promptly.
+                      </p>
+                    </div>
+
+                    {/* Active Selected Plan Callout */}
+                    {selectedPlan && selectedPlan.name && (
+                      <div className="p-3 rounded-xl bg-white/5 border border-white/15 flex items-center justify-between text-xs">
+                        <div>
+                          <span className="text-zinc-400">Selected Plan: </span>
+                          <span className="font-bold text-white">{selectedPlan.name}</span>
+                          <span className="text-zinc-400 ml-1">({selectedPlan.rate})</span>
+                        </div>
+                        {onResetPlan && (
+                          <button 
+                            type="button" 
+                            onClick={onResetPlan} 
+                            className="text-[11px] text-zinc-400 hover:text-white underline ml-2"
+                          >
+                            Change
+                          </button>
+                        )}
+                      </div>
+                    )}
 
                     <div>
-                      <label className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">Your Name</label>
+                      <label htmlFor="user-name" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                        Your Full Name <span className="text-emerald-400">*</span>
+                      </label>
                       <input 
+                        id="user-name"
                         type="text" 
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         placeholder="Enter your name"
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">Your Contact Number / Email</label>
+                      <label htmlFor="user-contact" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                        Contact Phone Number or Email <span className="text-emerald-400">*</span>
+                      </label>
                       <input 
+                        id="user-contact"
                         type="text" 
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         placeholder="Enter your phone number or email"
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
+                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">Service Interested In</label>
+                      <label htmlFor="package-select" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                        Service Package
+                      </label>
                       <select 
+                        id="package-select"
                         value={formData.service}
                         onChange={(e) => setFormData({...formData, service: e.target.value})}
-                        className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white transition-all"
+                        className="w-full bg-black border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-all"
                       >
-                        <option value="Website + AI Agent + Free Ad Run (Best Value)">Website + AI Agent + Free Ad Run (₹11,999)</option>
-                        <option value="Website + Free Ad Run">Website + Free Ad Run (₹6,999)</option>
-                        <option value="AI Agent + Free Ad Run">AI Agent + Free Ad Run (₹3,999)</option>
-                        <option value="Ad Run Only">Ad Run Only (₹1,599/mo)</option>
+                        <option value="Website + AI Agent + Free Ad Run">Website + AI Agent + Free Ad Run (₹11,999 / ₹12,999 One-time)</option>
+                        <option value="Website + Free Ad Run">Website + Free Ad Run (₹6,999 One-time)</option>
+                        <option value="AI Agent + Free Ad Run">AI Agent + Free Ad Run (₹3,999 / ₹4,999 One-time)</option>
+                        <option value="Ad Run Only">Ad Run Only (₹1,599/mo or ₹2,699/mo)</option>
                         <option value="Custom Requirement">Custom Requirement / Consultation</option>
                       </select>
                     </div>
 
                     <div>
+                      <label htmlFor="platform-option" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                        Platform Preference
+                      </label>
+                      <select 
+                        id="platform-option"
+                        value={formData.platformOption}
+                        onChange={(e) => setFormData({...formData, platformOption: e.target.value})}
+                        className="w-full bg-black border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-all"
+                      >
+                        <option value="Single Platform (WhatsApp or Instagram)">Single Platform (WhatsApp or Instagram)</option>
+                        <option value="Both Platforms (WhatsApp + Instagram)">Both Platforms (WhatsApp + Instagram)</option>
+                        <option value="1 Ad Platform (Meta or Google)">1 Ad Platform (Meta or Google)</option>
+                        <option value="2 Ad Platforms (Meta + Google/YT)">2 Ad Platforms (Meta + Google/YT)</option>
+                        <option value="Not Sure Yet / Need Consultation">Not Sure Yet / Need Consultation</option>
+                      </select>
+                    </div>
+
+                    <div>
                       <div className="flex items-center justify-between mb-2">
-                        <label className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider">Message / Business Details</label>
+                        <label htmlFor="user-message" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider">
+                          Message / Business Details
+                        </label>
                         <span className="text-[11px] text-zinc-500 uppercase tracking-wider font-medium">Optional</span>
                       </div>
                       <textarea 
+                        id="user-message"
                         rows="3"
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -1304,10 +1548,10 @@
                       <button 
                         type="submit" 
                         disabled={loading}
-                        className="w-full bg-white text-black font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-zinc-200 transition-all shadow-md flex items-center justify-center gap-2"
+                        className="w-full bg-white text-black font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-zinc-200 transition-all shadow-md flex items-center justify-center gap-2 min-h-[48px]"
                       >
                         <Icon name="send" size={16} />
-                        <span>{loading ? "Sending..." : "Submit Inquiry"}</span>
+                        <span>{loading ? "Sending Inquiry..." : "Submit Inquiry"}</span>
                       </button>
                     </div>
                   </form>
@@ -1320,16 +1564,14 @@
     }
 
     // ==========================================
-    // 10. FOOTER COMPONENT (NexStudio Watermark Style)
+    // 11. FOOTER COMPONENT (NexStudio Watermark Style)
     // ==========================================
     function Footer() {
       return (
         <footer className="bg-black relative pt-20 pb-12 border-t border-white/10 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            {/* Top Link Columns */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12">
               
-              {/* Brand Column */}
               <div className="md:col-span-2">
                 <a href="#home" className="inline-block mb-4">
                   <img src="Simple_new.png" alt="SIMPLE Logo" className="h-12 w-auto object-contain" />
@@ -1341,53 +1583,51 @@
                   Websites, AI agents and ad campaigns for your business, all in one place. Engineered to automate customer service and accelerate growth.
                 </p>
 
-                {/* Social Channels */}
                 <div className="flex items-center space-x-3">
                   <a 
                     href={INSTAGRAM_URL} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-                    aria-label="Instagram"
+                    aria-label="Instagram profile"
                   >
                     <Icon name="instagram" size={18} />
                   </a>
                   <a 
                     href={`mailto:${EMAIL_ADDRESS}`} 
                     className="w-10 h-10 rounded-full border border-white/15 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
-                    aria-label="Email"
+                    aria-label="Email address"
                   >
                     <Icon name="mail" size={18} />
                   </a>
                 </div>
               </div>
 
-              {/* Navigation Links */}
               <div>
-                <h4 className="text-xs uppercase font-bold text-white tracking-widest mb-4">Quick Links</h4>
+                <h4 className="text-xs uppercase font-bold text-white tracking-widest mb-4">Navigation</h4>
                 <ul className="space-y-2.5 text-xs text-zinc-400 font-medium">
                   <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
                   <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                  <li><a href="#capabilities" className="hover:text-white transition-colors">Capabilities</a></li>
                   <li><a href="#pricing" className="hover:text-white transition-colors">Pricing Plans</a></li>
-                  <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                  <li><a href="#why-simple" className="hover:text-white transition-colors">Why SIMPLE</a></li>
-                  <li><a href="#projects" className="hover:text-white transition-colors">Projects</a></li>
+                  <li><a href="#boundaries" className="hover:text-white transition-colors">Service Boundaries</a></li>
+                  <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                  <li><a href="#about" className="hover:text-white transition-colors">About SIMPLE</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                 </ul>
               </div>
 
-              {/* Services List */}
               <div>
                 <h4 className="text-xs uppercase font-bold text-white tracking-widest mb-4">Services</h4>
                 <ul className="space-y-2.5 text-xs text-zinc-400 font-medium">
                   <li><a href="#services" className="hover:text-white transition-colors">Website Development</a></li>
                   <li><a href="#services" className="hover:text-white transition-colors">WhatsApp AI Agents</a></li>
                   <li><a href="#services" className="hover:text-white transition-colors">Instagram AI Agents</a></li>
-                  <li><a href="#services" className="hover:text-white transition-colors">Ad Run Services (Meta/YT/X)</a></li>
-                  <li><a href="#pricing" className="hover:text-white transition-colors">Discounted Bundles</a></li>
+                  <li><a href="#services" className="hover:text-white transition-colors">Ad Run Services</a></li>
+                  <li><a href="#pricing" className="hover:text-white transition-colors">All-in-One Suites</a></li>
                 </ul>
               </div>
 
-              {/* Contact Direct */}
               <div>
                 <h4 className="text-xs uppercase font-bold text-white tracking-widest mb-4">Direct Contact</h4>
                 <ul className="space-y-3 text-xs text-zinc-400">
@@ -1412,7 +1652,6 @@
 
             </div>
 
-            {/* Dedicated Luxury Agency "SIMPLE" Wordmark Showcase */}
             <div className="w-full my-8 sm:my-14 select-none flex flex-col items-center justify-center border-t border-white/10 pt-10 sm:pt-16 pb-2 text-center">
               <div className="footer-brand-display text-[15vw] sm:text-[16vw] lg:text-[17vw] tracking-[0.12em] sm:tracking-[0.16em]">
                 SIMPLE
@@ -1422,12 +1661,11 @@
               </p>
             </div>
 
-            {/* Bottom Bar */}
             <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
               <div className="flex space-x-6">
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">Terms & Conditions</span>
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">Privacy Policy</span>
-                <span className="hover:text-zinc-400 cursor-pointer transition-colors">Cookies</span>
+                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Terms]</span>
+                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Privacy]</span>
+                <span className="hover:text-zinc-400 cursor-pointer transition-colors">[Owner Policy: Cancellation]</span>
               </div>
               <div className="text-zinc-400">
                 © 2026 SIMPLE. All rights reserved.
@@ -1439,12 +1677,12 @@
     }
 
     // ==========================================
-    // 11. EXTRAS: FLOATING WHATSAPP & AI CHAT WIDGET
+    // 12. FLOATING AI ASSISTANT WIDGET
     // ==========================================
     function FloatingChatWidget() {
       const [isOpen, setIsOpen] = useState(false);
       const [messages, setMessages] = useState([
-        { sender: "bot", text: "Hello! I am the SIMPLE AI Agent. Ask me about our websites, 24/7 AI agents, ad runs, or pricing packages!" }
+        { sender: "bot", text: "Hello! I am the SIMPLE Assistant. Ask me about our websites, 24/7 AI chat agents, ad management, or package pricing!" }
       ]);
       const [input, setInput] = useState("");
       const [loading, setLoading] = useState(false);
@@ -1459,21 +1697,21 @@
       const getSmartBotReply = (userMsg) => {
         const lower = userMsg.toLowerCase();
         if (["site", "website", "web", "page", "developer", "design"].some(k => lower.includes(k))) {
-          return "We build modern, ultra-responsive websites tailored for your business that look stunning on every screen. Packages start at ₹6,999 (discounted from ₹9,999) and include a FREE Ad Run setup!";
+          return "Our Website package is a one-time fee of ₹6,999 (or ₹11,999 bundled with an AI Agent). It includes up to 6 responsive pages, contact forms, and 30 days of complimentary ad campaign setup on 1 platform. You own 100% of your website code with zero lock-in.";
         }
         if (["ai", "agent", "bot", "whatsapp", "instagram", "chat"].some(k => lower.includes(k))) {
-          return "Our AI Agents operate 24/7 on WhatsApp or Instagram to instantly answer customer questions, share product catalogs, and capture leads while you sleep. Single platform is ₹3,999, or both platforms for ₹4,999 (discounted rate)!";
+          return "Our AI Agents operate 24/7 to answer customer FAQs, share product details, and capture leads on WhatsApp or Instagram. Setup is ₹3,999 (single platform) or ₹4,999 for both WhatsApp + Instagram synchronized.";
         }
-        if (["ad", "ads", "run", "meta", "campaign", "marketing", "google", "youtube"].some(k => lower.includes(k))) {
-          return "We run and optimize your ads across Instagram, Facebook, YouTube, and X for ₹1,599/mo (1 platform) or ₹2,699/mo (2 platforms). Note: We manage, target, and optimize the campaigns; clients provide their creative graphics/videos.";
+        if (["ad", "ads", "run", "meta", "campaign", "marketing", "google", "spend", "budget"].some(k => lower.includes(k))) {
+          return "Ad Run management is ₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms. Important: ad spend is funded directly by you to Meta or Google; we manage, target, and optimize the campaigns.";
         }
-        if (["price", "cost", "pricing", "plan", "package", "rate", "inr", "rupee", "discount"].some(k => lower.includes(k))) {
-          return "Here are our active limited-period discounted packages:\n1. Website + AI Agent + Free Ad Run: ₹11,999 (was ₹14,999)\n2. Website + Free Ad Run: ₹6,999 (was ₹9,999)\n3. AI Agent + Free Ad Run: ₹3,999 (was ₹5,999)\n4. Ad Run Only: ₹1,599/mo (was ₹2,499/mo).";
+        if (["price", "cost", "pricing", "plan", "package", "rate", "inr", "rupee"].some(k => lower.includes(k))) {
+          return "Here are our transparent rates:\n1. Website + AI Agent + Free Ad Run: ₹11,999 (Both AI: ₹12,999) [One-time]\n2. Website + Free Ad Run: ₹6,999 [One-time]\n3. AI Agent + Free Ad Run: ₹3,999 (Both: ₹4,999) [One-time]\n4. Ad Run Only: ₹1,599/mo (1 platform) or ₹2,699/mo (2 platforms) [Monthly].";
         }
         if (["contact", "phone", "email", "call", "reach", "hire", "number", "talk"].some(k => lower.includes(k))) {
-          return "You can reach us directly:\n• Email: simple.agency0011@gmail.com\n• Instagram: @simple____agency\n• Or submit an inquiry through our Contact section on this page!";
+          return "You can reach us directly:\n• Email: simple.agency0011@gmail.com\n• Instagram: @simple____agency\n• Or submit an inquiry through our Contact form on this page!";
         }
-        return "I'm the SIMPLE AI Assistant! I can help you with our Website Development, 24/7 AI Agents, Ad Run Services, and Pricing packages. How can I help your business today?";
+        return "I'm the SIMPLE Assistant! How can I help you regarding our web development, AI automation, or ad management services?";
       };
 
       const handleSend = async (textToSend) => {
@@ -1506,25 +1744,21 @@
 
       return (
         <>
-          {/* Floating Action Trigger Container */}
           <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-            {/* SIMPLE AI Agent Trigger Button */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="bg-zinc-900 border border-white/20 hover:border-white text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-2 hover:bg-zinc-800 transition-all group"
-              aria-label="Open SIMPLE AI Agent"
+              className="bg-zinc-900 border border-white/20 hover:border-white text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-2 hover:bg-zinc-800 transition-all group min-h-[48px]"
+              aria-label="Open SIMPLE Assistant"
             >
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
               <span className="text-xs font-bold tracking-wider uppercase">SIMPLE AI</span>
               <Icon name="sparkles" size={15} className="text-white group-hover:rotate-12 transition-transform" />
             </button>
           </div>
 
-          {/* AI Chat Modal Dialog */}
           {isOpen && (
-            <div className="fixed bottom-24 right-6 z-50 w-[92vw] sm:w-[380px] max-w-sm rounded-3xl border border-white/20 bg-zinc-950 shadow-2xl overflow-hidden flex flex-col h-[500px] backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-5">
+            <div className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-[380px] max-w-sm rounded-3xl border border-white/20 bg-zinc-950 shadow-2xl overflow-hidden flex flex-col h-[500px] backdrop-blur-2xl animate-in fade-in slide-in-from-bottom-5">
               
-              {/* Chat Header */}
               <div className="p-4 border-b border-white/10 bg-black flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-white text-black font-black text-xs flex items-center justify-center">
@@ -1532,21 +1766,21 @@
                   </div>
                   <div>
                     <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                      <span>SIMPLE AI Assistant</span>
+                      <span>SIMPLE Assistant</span>
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     </div>
-                    <div className="text-[10px] text-zinc-400">Instant Answers & Support</div>
+                    <div className="text-[10px] text-zinc-400">Transparent Answers & Support</div>
                   </div>
                 </div>
                 <button 
                   onClick={() => setIsOpen(false)}
                   className="text-zinc-400 hover:text-white p-1"
+                  aria-label="Close Assistant"
                 >
                   <Icon name="x" size={18} />
                 </button>
               </div>
 
-              {/* Chat Messages */}
               <div className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-black/60">
                 {messages.map((m, i) => (
                   <div 
@@ -1567,36 +1801,34 @@
                 {loading && (
                   <div className="flex justify-start">
                     <div className="bg-zinc-900 border border-white/10 p-3 rounded-2xl text-zinc-400 italic">
-                      SIMPLE AI is typing...
+                      SIMPLE Assistant is typing...
                     </div>
                   </div>
                 )}
                 <div ref={chatEndRef} />
               </div>
 
-              {/* Quick Prompt Chips */}
               <div className="px-3 py-2 bg-black/90 border-t border-white/10 flex gap-2 overflow-x-auto text-[11px] whitespace-nowrap">
                 <button 
-                  onClick={() => handleSend("Tell me about Website plans")}
+                  onClick={() => handleSend("What do website plans include?")}
                   className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
                 >
                   Websites
                 </button>
                 <button 
-                  onClick={() => handleSend("How does the AI Agent work?")}
+                  onClick={() => handleSend("What is the AI Agent setup?")}
                   className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
                 >
                   AI Agents
                 </button>
                 <button 
-                  onClick={() => handleSend("What are the pricing plans?")}
+                  onClick={() => handleSend("What is the pricing list?")}
                   className="px-2.5 py-1 rounded-full bg-zinc-900 border border-white/15 text-zinc-300 hover:text-white hover:border-white transition-all shrink-0"
                 >
                   Pricing
                 </button>
               </div>
 
-              {/* Chat Input & WhatsApp Handoff */}
               <div className="p-3 bg-black border-t border-white/10 flex items-center gap-2">
                 <input 
                   type="text"
@@ -1615,7 +1847,6 @@
                 </button>
               </div>
 
-              {/* Direct human handoff button */}
               <a 
                 href="#contact"
                 onClick={() => setIsOpen(false)}
@@ -1634,18 +1865,33 @@
     // MAIN APP COMPONENT
     // ==========================================
     function App() {
+      const [selectedPlan, setSelectedPlan] = useState(null);
+
+      const handleSelectPlan = (planInfo) => {
+        setSelectedPlan(planInfo);
+        const contactElem = document.getElementById("contact");
+        if (contactElem) {
+          contactElem.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+
+      const handleResetPlan = () => {
+        setSelectedPlan(null);
+      };
+
       return (
         <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
           <Navbar />
           <main>
             <Hero />
             <Services />
-            <Pricing />
+            <Capabilities />
+            <Pricing onSelectPlan={handleSelectPlan} />
+            <ServiceBoundaries />
             <HowItWorks />
-            <WhySimple />
-            <ProjectsAndTestimonials />
-            <CTASection />
-            <Contact />
+            <FAQSection />
+            <AboutAgency />
+            <Contact selectedPlan={selectedPlan} onResetPlan={handleResetPlan} />
           </main>
           <Footer />
           <FloatingChatWidget />
