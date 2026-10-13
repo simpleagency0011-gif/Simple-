@@ -11,7 +11,7 @@ const { validateSchema, bookingSchema } = require('./validator');
 const rateLimiter = require('./rate-limiter');
 const { isOriginAllowed, scrubPII } = require('./security-utils');
 const { dispatchBookingEmails, OWNER_EMAIL } = require('./email-service');
-const { generateClientWhatsAppUrl, dispatchOwnerWhatsAppAlert } = require('./whatsapp-service');
+const { generateClientWhatsAppUrl, generateClientWelcomeText, dispatchOwnerWhatsAppAlert } = require('./whatsapp-service');
 
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin || req.headers.referer || '';
@@ -93,6 +93,7 @@ module.exports = async function handler(req, res) {
         name: bookingData.name,
         service: bookingData.service,
         whatsappConciergeUrl,
+        welcomeMessage: generateClientWelcomeText(bookingData),
         emailStatus: {
           ownerDelivered: emailResult.ownerResult?.success || false,
           clientDelivered: emailResult.clientResult?.success || false

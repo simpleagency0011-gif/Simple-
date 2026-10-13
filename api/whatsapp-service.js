@@ -19,12 +19,15 @@ const WHATSAPP_WEBHOOK_URL = process.env.WHATSAPP_WEBHOOK_URL || '';
 function generateClientWhatsAppUrl(data) {
   const planLabel = data.service || data.planName || 'General Inquiry';
   const text = `Hi SIMPLE Studio! 👋
-I just submitted a booking on your website:
+
+Thank you for receiving my booking! I'm excited to partner with your team.
+
+📋 Booking Details:
 • Booking ID: ${data.bookingId}
-• Plan: ${planLabel}
+• Package: ${planLabel}
 • Name: ${data.name}
-${data.phone ? `• Phone: ${data.phone}\n` : ''}${data.message ? `• Note: ${data.message}\n` : ''}
-I would like to get started with project onboarding!`;
+${data.phone ? `• Phone: ${data.phone}\n` : ''}${data.email ? `• Email: ${data.email}\n` : ''}${data.message ? `• Requirements: ${data.message}\n` : ''}
+Please share the project onboarding roadmap and asset checklist so we can get started!`;
 
   const encoded = encodeURIComponent(text);
   return `https://wa.me/${OWNER_PHONE.replace(/[^\d]/g, '')}?text=${encoded}`;
@@ -37,14 +40,37 @@ function generateOwnerWhatsAppText(data) {
   const planLabel = data.service || data.planName || 'General Inquiry';
   return `🚀 *NEW BOOKING on SIMPLE!*
 ━━━━━━━━━━━━━━
+✦ *Thank You & Lead Intake* ✦
 👤 *Client:* ${data.name}
 📱 *Phone:* ${data.phone}
 ${data.email ? `✉️ *Email:* ${data.email}\n` : ''}📋 *Plan:* ${planLabel}
-${data.platformOption ? `⚙️ *Platform:* ${data.platformOption}\n` : ''}${data.message ? `📝 *Notes:* ${data.message}\n` : ''}🆔 *Ref:* ${data.bookingId}
+${data.platformOption ? `⚙️ *Platform:* ${data.platformOption}\n` : ''}${data.message ? `📝 *Requirements:* ${data.message}\n` : ''}🆔 *Ref ID:* ${data.bookingId}
 ⏰ *Time:* ${new Date().toLocaleTimeString()}
 ━━━━━━━━━━━━━━
+🏢 *SIMPLE Studio* · Make Your Work Simple
 👉 *Click to WhatsApp Client:*
 https://wa.me/${(data.phone || '').replace(/[^\d]/g, '')}`;
+}
+
+/**
+ * Generate formatted welcome text from AI agent to client
+ */
+function generateClientWelcomeText(data) {
+  const planLabel = data.service || data.planName || 'Digital Services';
+  return `✦ *WELCOME TO SIMPLE STUDIO!* ✦
+Make Your Work Simple.
+
+Thank you for choosing SIMPLE Studio, ${data.name}! We have received your booking for *${planLabel}* (Ref: ${data.bookingId}).
+
+🏢 *About SIMPLE:*
+We create high-converting custom websites, 24/7 conversational AI agents on WhatsApp & Instagram, and targeted ad campaigns. Zero agency bloat, 100% code ownership, and 3–7 day delivery.
+
+🚀 *Next Steps:*
+Our team and AI Concierge will review your requirements and follow up within 24 business hours to kick off your project!
+
+🌐 https://simple-chi-nine.vercel.app
+✉️ simple.agency0011@gmail.com
+📸 Instagram: @simple____agency`;
 }
 
 /**
@@ -119,5 +145,6 @@ module.exports = {
   OWNER_PHONE,
   generateClientWhatsAppUrl,
   generateOwnerWhatsAppText,
+  generateClientWelcomeText,
   dispatchOwnerWhatsAppAlert
 };

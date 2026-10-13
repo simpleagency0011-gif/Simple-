@@ -159,52 +159,121 @@ function generateOwnerEmailTemplate(data) {
  * Generate formatted HTML template for Client Confirmation
  */
 function generateClientEmailTemplate(data) {
+  const planLabel = data.service || data.planName || 'Digital Services';
+  const cleanPhone = (data.phone || '').replace(/[^\d+]/g, '');
+  const waConciergeUrl = `https://wa.me/919407928737?text=${encodeURIComponent(`Hi SIMPLE Studio! 👋 I just booked the ${planLabel} package (Ref: ${data.bookingId}). Looking forward to discussing the onboarding!`)}`;
+
   return `
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #000000; color: #FFFFFF; padding: 24px 12px; margin: 0;">
-  <div style="max-width: 580px; margin: 0 auto; background: #0c0c0e; border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; overflow: hidden;">
-    <div style="background: linear-gradient(90deg, #ffffff 0%, #71717a 100%); padding: 3px;"></div>
+  <div style="max-width: 600px; margin: 0 auto; background: #0c0c0e; border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; overflow: hidden;">
+    <div style="background: linear-gradient(90deg, #ffffff 0%, #10B981 100%); padding: 3px;"></div>
     
-    <div style="padding: 28px 24px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px; margin-bottom: 20px;">
-        <span style="font-size: 20px; font-weight: 900; letter-spacing: 0.15em; color: #FFFFFF;">SIMPLE</span>
-        <span style="font-size: 11px; font-weight: 700; background: rgba(255,255,255,0.1); color: #ffffff; padding: 4px 10px; border-radius: 999px;">CONFIRMATION</span>
+    <div style="padding: 32px 26px;">
+      <!-- Brand Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 18px; margin-bottom: 22px;">
+        <div>
+          <span style="font-size: 22px; font-weight: 900; letter-spacing: 0.15em; color: #FFFFFF;">SIMPLE</span>
+          <div style="font-size: 10px; color: #71717a; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 2px;">MAKE YOUR WORK SIMPLE</div>
+        </div>
+        <span style="font-size: 11px; font-weight: 700; background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(16, 185, 129, 0.3);">
+          BOOKING CONFIRMED
+        </span>
       </div>
 
-      <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px; color: #ffffff;">✦ Booking Received, ${data.name}!</h2>
-      <p style="font-size: 14px; color: #a1a1aa; margin: 0 0 20px; line-height: 1.6;">
-        Thank you for choosing SIMPLE. We have received your inquiry for <strong style="color: #ffffff;">${data.service || data.planName || 'Digital Services'}</strong>. Our team and AI Concierge have logged your project brief.
+      <!-- Thank You Note -->
+      <h2 style="font-size: 22px; font-weight: 800; margin: 0 0 10px; color: #ffffff;">
+        ✦ Thank You, ${data.name}!
+      </h2>
+      <p style="font-size: 14px; color: #d4d4d8; margin: 0 0 16px; line-height: 1.65;">
+        Thank you for choosing <strong>SIMPLE Studio</strong>. We truly appreciate your trust in us to build and elevate your digital presence. Our team and AI Concierge have recorded your booking and started reviewing your requirements.
       </p>
 
-      <div style="background: #141416; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 18px; margin-bottom: 20px;">
-        <h4 style="margin: 0 0 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #a1a1aa;">Booking Summary</h4>
+      <!-- Booking Summary Box -->
+      <div style="background: #141416; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 20px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: #34d399;">
+          📋 Your Booking Summary
+        </h4>
         <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
           <tr>
-            <td style="padding: 5px 0; color: #71717a;">Reference ID:</td>
-            <td style="padding: 5px 0; color: #ffffff; font-weight: 700; font-family: monospace;">${data.bookingId}</td>
+            <td style="padding: 6px 0; color: #71717a; width: 140px;">Booking Reference:</td>
+            <td style="padding: 6px 0; color: #ffffff; font-weight: 700; font-family: monospace;">${data.bookingId}</td>
           </tr>
           <tr>
-            <td style="padding: 5px 0; color: #71717a;">Selected Plan:</td>
-            <td style="padding: 5px 0; color: #ffffff; font-weight: 700;">${data.service || data.planName || 'General Inquiry'}</td>
+            <td style="padding: 6px 0; color: #71717a;">Selected Package:</td>
+            <td style="padding: 6px 0; color: #ffffff; font-weight: 700;">${planLabel}</td>
           </tr>
+          ${data.platformOption ? `
           <tr>
-            <td style="padding: 5px 0; color: #71717a;">Contact Phone:</td>
-            <td style="padding: 5px 0; color: #ffffff;">${data.phone}</td>
+            <td style="padding: 6px 0; color: #71717a;">Platform Choice:</td>
+            <td style="padding: 6px 0; color: #ffffff;">${data.platformOption}</td>
+          </tr>` : ''}
+          <tr>
+            <td style="padding: 6px 0; color: #71717a;">Contact Phone:</td>
+            <td style="padding: 6px 0; color: #ffffff;">${data.phone}</td>
           </tr>
+          ${data.email ? `
+          <tr>
+            <td style="padding: 6px 0; color: #71717a;">Email Address:</td>
+            <td style="padding: 6px 0; color: #ffffff;">${data.email}</td>
+          </tr>` : ''}
+          ${data.message ? `
+          <tr>
+            <td style="padding: 6px 0; color: #71717a; vertical-align: top;">Your Notes:</td>
+            <td style="padding: 6px 0; color: #d4d4d8; line-height: 1.5;">${data.message}</td>
+          </tr>` : ''}
         </table>
       </div>
 
-      <h4 style="font-size: 13px; color: #ffffff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.05em;">What Happens Next:</h4>
-      <ol style="font-size: 13px; color: #a1a1aa; line-height: 1.6; margin: 0 0 24px; padding-left: 20px;">
-        <li style="margin-bottom: 8px;"><strong style="color:#ffffff;">Direct Contact:</strong> We will reach out via WhatsApp or phone within 24 business hours to discuss your brand goals.</li>
-        <li style="margin-bottom: 8px;"><strong style="color:#ffffff;">Rapid Delivery:</strong> Clean websites (5–7 days), 24/7 AI conversational bots (3–5 days), and targeted ad setup (48–72h).</li>
-        <li><strong style="color:#ffffff;">Full Ownership:</strong> You own 100% of your source code and digital assets upon launch.</li>
+      <!-- About SIMPLE / Business Details -->
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff;">
+          🏢 About SIMPLE Studio
+        </h4>
+        <p style="font-size: 13px; color: #a1a1aa; line-height: 1.6; margin: 0 0 12px;">
+          SIMPLE is a modern digital agency focused on making client acquisition and digital branding effortless for businesses. We specialize in three core pillars:
+        </p>
+        <ul style="font-size: 13px; color: #d4d4d8; line-height: 1.6; margin: 0 0 14px; padding-left: 20px;">
+          <li><strong style="color: #ffffff;">Custom Responsive Websites:</strong> Hand-crafted, modern web applications built for speed, SEO, and conversions with 100% source code ownership.</li>
+          <li><strong style="color: #ffffff;">24/7 AI Conversational Agents:</strong> Intelligent WhatsApp and Instagram bots that answer FAQs, share product catalogs, and capture leads while you sleep.</li>
+          <li><strong style="color: #ffffff;">Targeted Ad Management:</strong> Data-backed Meta (Instagram/Facebook) and Google advertising campaigns to put your offer in front of active buyers.</li>
+        </ul>
+        <div style="font-size: 12px; color: #71717a; border-top: 1px solid rgba(255,255,255,0.06); pt-2; padding-top: 10px;">
+          <strong>Our Philosophy:</strong> No confusing retainers, no agency lock-in, and transparent deliverables completed in 3 to 7 business days.
+        </div>
+      </div>
+
+      <!-- What Happens Next -->
+      <h4 style="font-size: 13px; color: #ffffff; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.08em;">
+        🚀 What Happens Next:
+      </h4>
+      <ol style="font-size: 13px; color: #a1a1aa; line-height: 1.65; margin: 0 0 24px; padding-left: 20px;">
+        <li style="margin-bottom: 8px;"><strong style="color:#ffffff;">Kickoff & Discovery (Within 24 Hours):</strong> We will connect with you via WhatsApp or phone to review your brand assets and project goals.</li>
+        <li style="margin-bottom: 8px;"><strong style="color:#ffffff;">Rapid Technical Sprint:</strong> We build, optimize, and test your deliverables (5–7 days for websites, 3–5 days for AI agents, 48–72h for ads).</li>
+        <li><strong style="color:#ffffff;">Review & Final Handover:</strong> You review the live preview, request revisions, and receive full administrative ownership of your assets.</li>
       </ol>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; font-size: 11px; color: #71717a; text-align: center;">
-        © 2026 SIMPLE Studio · Make your work simple.
+      <!-- Immediate WhatsApp Concierge Button -->
+      <div style="text-align: center; margin: 24px 0;">
+        <a href="${waConciergeUrl}" style="display: inline-block; background: #25D366; color: #000000; font-weight: 800; font-size: 13px; text-decoration: none; padding: 14px 28px; border-radius: 999px; box-shadow: 0 0 25px rgba(37,211,102,0.25);">
+          💬 Chat with AI Concierge on WhatsApp
+        </a>
+        <div style="font-size: 11px; color: #71717a; margin-top: 8px;">
+          Direct connection to SIMPLE Studio (+91 94079 28737)
+        </div>
+      </div>
+
+      <!-- Contact Directory & Socials -->
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px; margin-top: 24px; font-size: 12px; color: #71717a; text-align: center; line-height: 1.8;">
+        <div><strong>SIMPLE Studio</strong> · Make your work simple.</div>
+        <div>
+          Official Email: <a href="mailto:simple.agency0011@gmail.com" style="color: #ffffff; text-decoration: underline;">simple.agency0011@gmail.com</a> · 
+          Instagram: <a href="https://instagram.com/simple____agency" style="color: #34d399; text-decoration: underline;">@simple____agency</a>
+        </div>
+        <div>Website: <a href="https://simple-chi-nine.vercel.app" style="color: #ffffff;">simple-chi-nine.vercel.app</a></div>
+        <div style="margin-top: 8px; font-size: 11px; color: #52525b;">© 2026 SIMPLE Studio. All rights reserved.</div>
       </div>
     </div>
   </div>
