@@ -1329,6 +1329,7 @@
       const [formData, setFormData] = useState({
         name: "",
         phone: "",
+        email: "",
         service: "Website + AI Agent + Free Ad Run",
         platformOption: "Single Platform (WhatsApp or Instagram)",
         message: "",
@@ -1336,6 +1337,7 @@
         verified: false // Anti-spam verification check
       });
       const [submitted, setSubmitted] = useState(false);
+      const [bookingInfo, setBookingInfo] = useState(null);
       const [loading, setLoading] = useState(false);
       const [spamError, setSpamError] = useState("");
       const renderTimestamp = useRef(Date.now());
@@ -1384,6 +1386,7 @@
             body: JSON.stringify({
               name: formData.name,
               phone: formData.phone,
+              email: formData.email,
               service: formData.service,
               platformOption: formData.platformOption,
               message: formData.message,
@@ -1391,7 +1394,12 @@
             })
           });
           if (res.ok) {
-            try { await res.json(); } catch (_) {}
+            try {
+              const data = await res.json();
+              if (data && data.booking) {
+                setBookingInfo(data.booking);
+              }
+            } catch (_) {}
           }
           setSubmitted(true);
         } catch (err) {
@@ -1469,18 +1477,39 @@
               {/* Right Column: Contact Form */}
               <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-surface to-black p-8 sm:p-10 shadow-2xl relative">
                 {submitted ? (
-                  <div className="text-center py-10">
-                    <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-6">
+                  <div className="text-center py-8 sm:py-10">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-5">
                       <Icon name="check" size={32} />
                     </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[11px] font-semibold text-zinc-300 mb-3 border border-white/15">
+                      <Icon name="sparkles" size={13} className="text-emerald-400" />
+                      <span>BOOKING ID: {bookingInfo?.bookingId || `SMPL-${Math.random().toString(36).substring(2, 8).toUpperCase()}`}</span>
+                    </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Thank you! We'll get back to you soon.</h3>
-                    <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto leading-relaxed">
-                      Thank you, <strong className="text-white">{formData.name || "friend"}</strong>! We have recorded your inquiry for <strong className="text-white">{formData.service}</strong> and will reach out to <strong className="text-white">{formData.phone}</strong> within 24 business hours.
+                    <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto leading-relaxed">
+                      Thank you, <strong className="text-white">{formData.name || "friend"}</strong>! We have recorded your booking for <strong className="text-white">{formData.service}</strong>. An email notification has been dispatched to our team, and our AI Concierge is ready to connect with you.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+
+                    {/* Prominent WhatsApp Concierge Button */}
+                    <div className="mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 max-w-md mx-auto">
+                      <a 
+                        href={bookingInfo?.whatsappConciergeUrl || `https://wa.me/919407928737?text=${encodeURIComponent(`Hi SIMPLE Studio! 👋 I just submitted a booking for ${formData.service || 'a package'}. Name: ${formData.name}. Phone: ${formData.phone}. Looking forward to discussing the onboarding!`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-[#25D366] text-black font-extrabold text-xs uppercase px-8 py-4 rounded-full hover:bg-[#20ba59] transition-all tracking-wider inline-flex items-center justify-center gap-2.5 min-h-[48px] shadow-lg shadow-emerald-900/30 hover:scale-[1.02] duration-200"
+                      >
+                        <Icon name="message-circle" size={18} />
+                        <span>Chat with AI Concierge on WhatsApp</span>
+                      </a>
+                      <p className="text-[11px] text-zinc-400 mt-2.5">
+                        Instant response · Connected directly to SIMPLE agency (+91 94079 28737)
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-3 border-t border-white/10">
                       <a 
                         href="/thank-you.html"
-                        className="bg-white text-black font-bold text-xs uppercase px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
+                        className="bg-white/10 text-white font-bold text-xs uppercase px-6 py-3 rounded-full hover:bg-white/20 transition-all tracking-wider inline-flex items-center gap-2 min-h-[40px] border border-white/15"
                       >
                         <span>View Confirmation Page</span>
                         <Icon name="arrow-right" size={14} />
@@ -1489,9 +1518,10 @@
                         type="button"
                         onClick={() => {
                           setSubmitted(false);
+                          setBookingInfo(null);
                           if (onResetPlan) onResetPlan();
                         }}
-                        className="border border-white/20 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-full hover:bg-white/10 transition-all tracking-wider inline-flex items-center gap-2 min-h-[44px]"
+                        className="border border-white/20 text-zinc-400 hover:text-white font-bold text-xs uppercase px-6 py-3 rounded-full hover:bg-white/10 transition-all tracking-wider min-h-[40px]"
                       >
                         <span>Submit Another Inquiry</span>
                       </button>
@@ -1555,19 +1585,34 @@
                       />
                     </div>
 
-                    <div>
-                      <label htmlFor="user-contact" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
-                        Contact Phone Number or Email <span className="text-emerald-400">*</span>
-                      </label>
-                      <input 
-                        id="user-contact"
-                        type="text" 
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        placeholder="Enter your phone number or email"
-                        className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="user-phone" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                          WhatsApp / Phone <span className="text-emerald-400">*</span>
+                        </label>
+                        <input 
+                          id="user-phone"
+                          type="tel" 
+                          required
+                          value={formData.phone}
+                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                          placeholder="+91 98765 43210"
+                          className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="user-email" className="block text-xs uppercase font-semibold text-zinc-300 tracking-wider mb-2">
+                          Email Address <span className="text-zinc-500 font-normal">(For AI confirmation)</span>
+                        </label>
+                        <input 
+                          id="user-email"
+                          type="email" 
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          placeholder="your@email.com"
+                          className="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-all"
+                        />
+                      </div>
                     </div>
 
                     <div>
