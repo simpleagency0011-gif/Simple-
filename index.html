@@ -181,9 +181,9 @@
 
       const navLinks = [
         { label: "Home", href: "#home" },
+        { label: "Pricing", href: "#pricing" },
         { label: "Services", href: "#services" },
         { label: "Capabilities", href: "#capabilities" },
-        { label: "Pricing", href: "#pricing" },
         { label: "Boundaries", href: "#boundaries" },
         { label: "FAQ", href: "#faq" },
         { label: "About", href: "#about" },
@@ -407,7 +407,7 @@
       ];
 
       return (
-        <section id="services" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
+        <section id="services" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20">
               <div>
@@ -531,7 +531,7 @@
       ];
 
       return (
-        <section id="capabilities" className="py-24 sm:py-32 bg-black relative border-t border-white/10">
+        <section id="capabilities" className="py-24 sm:py-32 bg-dark relative border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
               <div>
@@ -1758,9 +1758,9 @@
                 <h4 className="text-xs uppercase font-bold text-white tracking-widest mb-4">Navigation</h4>
                 <ul className="space-y-2.5 text-xs text-zinc-400 font-medium">
                   <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
+                  <li><a href="#pricing" className="hover:text-white transition-colors">Pricing Plans</a></li>
                   <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
                   <li><a href="#capabilities" className="hover:text-white transition-colors">Capabilities</a></li>
-                  <li><a href="#pricing" className="hover:text-white transition-colors">Pricing Plans</a></li>
                   <li><a href="#boundaries" className="hover:text-white transition-colors">Service Boundaries</a></li>
                   <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
                   <li><a href="#about" className="hover:text-white transition-colors">About SIMPLE</a></li>
@@ -2095,9 +2095,9 @@
       useEffect(() => {
         const sectionTitles = {
           home: "Home | SIMPLE Agency",
+          pricing: "Pricing & Plans | SIMPLE Agency",
           services: "Services | SIMPLE Agency",
           capabilities: "Sample Capabilities | SIMPLE Agency",
-          pricing: "Pricing & Plans | SIMPLE Agency",
           boundaries: "Service Boundaries | SIMPLE Agency",
           faq: "Frequently Asked Questions | SIMPLE Agency",
           about: "About Us | SIMPLE Agency",
@@ -2146,9 +2146,9 @@
           <Navbar />
           <main>
             <Hero />
+            <Pricing onSelectPlan={handleSelectPlan} />
             <Services />
             <Capabilities />
-            <Pricing onSelectPlan={handleSelectPlan} />
             <ServiceBoundaries />
             <HowItWorks />
             <FAQSection />
