@@ -680,7 +680,7 @@
                   <div className="mb-6 pb-6 border-b border-white/10">
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">
-                        {pkg1Dual ? "₹12,999" : "₹11,999"}
+                        {pkg1Dual ? "₹7,999" : "₹6,999"}
                       </span>
                       <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
                         One-Time Fee
@@ -717,14 +717,14 @@
                   <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
                     <li>• Ad spend is funded directly by client to Meta/Google.</li>
                     <li>• Client supplies creative graphics/videos.</li>
-                    <li>• After 30 days, website & bot remain yours 100% with no recurring agency fee. Ongoing ad management optional at ₹1,599/mo.</li>
+                    <li>• After 30 days, website & bot remain yours 100% with no recurring agency fee. Ongoing ad management optional at ₹1,499/mo.</li>
                   </ul>
                 </div>
 
                 <button 
                   onClick={() => onSelectPlan({
                     name: "Website + AI Agent + Free Ad Run",
-                    rate: pkg1Dual ? "₹12,999 (One-time)" : "₹11,999 (One-time)",
+                    rate: pkg1Dual ? "₹7,999 (One-time)" : "₹6,999 (One-time)",
                     platform: pkg1Dual ? "Both Platforms (WhatsApp + Instagram)" : "Single Platform (WhatsApp or Instagram)",
                     billing: "One-time implementation fee"
                   })}
@@ -748,7 +748,7 @@
 
                   <div className="mb-6 pb-6 border-b border-white/10 pt-7">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl sm:text-4xl font-black text-white">₹6,999</span>
+                      <span className="text-3xl sm:text-4xl font-black text-white">₹4,999</span>
                       <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
                         One-Time Fee
                       </span>
@@ -782,14 +782,14 @@
                   <ul className="space-y-1.5 mb-8 text-[11px] text-zinc-400 border-l border-white/10 pl-3">
                     <li>• Ad spend funded directly by client.</li>
                     <li>• Client supplies images/copy for website and ads.</li>
-                    <li>• Site is 100% yours; optional ongoing ad management at ₹1,599/mo.</li>
+                    <li>• Site is 100% yours; optional ongoing ad management at ₹1,499/mo.</li>
                   </ul>
                 </div>
 
                 <button 
                   onClick={() => onSelectPlan({
                     name: "Website + Free Ad Run",
-                    rate: "₹6,999 (One-time)",
+                    rate: "₹4,999 (One-time)",
                     platform: "1 Ad Platform (Meta or Google)",
                     billing: "One-time development fee"
                   })}
@@ -832,7 +832,7 @@
                   <div className="mb-6 pb-6 border-b border-white/10">
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">
-                        {pkg3Dual ? "₹4,999" : "₹3,999"}
+                        {pkg3Dual ? "₹2,799" : "₹1,799"}
                       </span>
                       <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
                         One-Time Setup
@@ -874,7 +874,7 @@
                 <button 
                   onClick={() => onSelectPlan({
                     name: "AI Agent + Free Ad Run",
-                    rate: pkg3Dual ? "₹4,999 (One-time)" : "₹3,999 (One-time)",
+                    rate: pkg3Dual ? "₹2,799 (One-time)" : "₹1,799 (One-time)",
                     platform: pkg3Dual ? "Both Platforms (WhatsApp + Instagram)" : "Single Platform (WhatsApp or Instagram)",
                     billing: "One-time setup fee"
                   })}
@@ -917,7 +917,7 @@
                   <div className="mb-6 pb-6 border-b border-white/10">
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-white">
-                        {pkg4Platforms === 1 ? "₹1,599" : "₹2,699"}
+                        {pkg4Platforms === 1 ? "₹1,499" : "₹2,499"}
                       </span>
                       <span className="text-xs text-zinc-400 font-medium uppercase tracking-wide">
                         / month
@@ -959,7 +959,7 @@
                 <button 
                   onClick={() => onSelectPlan({
                     name: "Ad Run Only",
-                    rate: pkg4Platforms === 1 ? "₹1,599/month" : "₹2,699/month",
+                    rate: pkg4Platforms === 1 ? "₹1,499/month" : "₹2,499/month",
                     platform: pkg4Platforms === 1 ? "1 Ad Platform" : "2 Ad Platforms",
                     billing: "Monthly recurring management fee"
                   })}
@@ -1198,7 +1198,7 @@
         },
         {
           q: "What does 'Free Ad Run' include and what happens after 30 days?",
-          a: "Core packages include 30 calendar days of complimentary ad campaign setup and active bid management on 1 platform. After the 30 days conclude, you can choose to manage the ads yourself at no cost, pause campaigns, or optionally retain SIMPLE for ongoing monthly management (₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms)."
+          a: "Core packages include 30 calendar days of complimentary ad campaign setup and active bid management on 1 platform. After the 30 days conclude, you can choose to manage the ads yourself at no cost, pause campaigns, or optionally retain SIMPLE for ongoing monthly management (₹1,499/mo for 1 platform or ₹2,499/mo for 2 platforms)."
         },
         {
           q: "What does the '+₹1,000' option for AI Agents add?",
@@ -1625,10 +1625,10 @@
                         onChange={(e) => setFormData({...formData, service: e.target.value})}
                         className="w-full bg-black border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-white transition-all"
                       >
-                        <option value="Website + AI Agent + Free Ad Run">Website + AI Agent + Free Ad Run (₹11,999 / ₹12,999 One-time)</option>
-                        <option value="Website + Free Ad Run">Website + Free Ad Run (₹6,999 One-time)</option>
-                        <option value="AI Agent + Free Ad Run">AI Agent + Free Ad Run (₹3,999 / ₹4,999 One-time)</option>
-                        <option value="Ad Run Only">Ad Run Only (₹1,599/mo or ₹2,699/mo)</option>
+                        <option value="Website + AI Agent + Free Ad Run">Website + AI Agent + Free Ad Run (₹6,999 / ₹7,999 One-time)</option>
+                        <option value="Website + Free Ad Run">Website + Free Ad Run (₹4,999 One-time)</option>
+                        <option value="AI Agent + Free Ad Run">AI Agent + Free Ad Run (₹1,799 / ₹2,799 One-time)</option>
+                        <option value="Ad Run Only">Ad Run Only (₹1,499/mo or ₹2,499/mo)</option>
                         <option value="Custom Requirement">Custom Requirement / Consultation</option>
                       </select>
                     </div>
@@ -1915,16 +1915,16 @@
           return "For one-time website and AI agent builds, deposits cover dedicated development hours and are non-refundable once work begins. For monthly Ad Run retainers, you can pause or cancel at any time with 7 days' notice prior to your next cycle.";
         }
         if (["site", "website", "web", "page", "developer", "design"].some(k => lower.includes(k))) {
-          return "Our Website package is a one-time fee of ₹6,999 (or ₹11,999 bundled with an AI Agent). It includes up to 6 responsive pages, contact forms, and 30 days of complimentary ad campaign setup on 1 platform. You own 100% of your website code with zero lock-in.";
+          return "Our Website package is a one-time fee of ₹4,999 (or ₹6,999 bundled with 1 AI Agent / ₹7,999 with 2 AI Agents). It includes up to 6 responsive pages, contact forms, and 30 days of complimentary ad campaign setup on 1 platform. You own 100% of your website code with zero lock-in.";
         }
         if (["ai", "agent", "bot", "whatsapp", "instagram", "chat"].some(k => lower.includes(k))) {
-          return "Our AI Agents operate 24/7 to answer customer FAQs, share product details, and capture leads on WhatsApp or Instagram. Setup is ₹3,999 (single platform) or ₹4,999 for both WhatsApp + Instagram synchronized.";
+          return "Our AI Agents operate 24/7 to answer customer FAQs, share product details, and capture leads on WhatsApp or Instagram. Setup is ₹1,799 (single platform) or ₹2,799 for both WhatsApp + Instagram synchronized.";
         }
         if (["ad", "ads", "run", "meta", "campaign", "marketing", "google", "spend", "budget"].some(k => lower.includes(k))) {
-          return "Ad Run management is ₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms. Important: ad spend is funded directly by you to Meta or Google; we manage, target, and optimize the campaigns.";
+          return "Ad Run management is ₹1,499/mo for 1 platform or ₹2,499/mo for 2 platforms. Important: ad spend is funded directly by you to Meta or Google; we manage, target, and optimize the campaigns.";
         }
         if (["price", "cost", "pricing", "plan", "package", "rate", "inr", "rupee"].some(k => lower.includes(k))) {
-          return "Here are our transparent rates:\n1. Website + AI Agent + Free Ad Run: ₹11,999 (Both AI: ₹12,999) [One-time]\n2. Website + Free Ad Run: ₹6,999 [One-time]\n3. AI Agent + Free Ad Run: ₹3,999 (Both: ₹4,999) [One-time]\n4. Ad Run Only: ₹1,599/mo (1 platform) or ₹2,699/mo (2 platforms) [Monthly].";
+          return "Here are our transparent rates:\n1. Website + AI Agent + Free Ad Run: ₹6,999 (Both AI: ₹7,999) [One-time]\n2. Website + Free Ad Run: ₹4,999 [One-time]\n3. AI Agent + Free Ad Run: ₹1,799 (Both: ₹2,799) [One-time]\n4. Ad Run Only: ₹1,499/mo (1 platform) or ₹2,499/mo (2 platforms) [Monthly].";
         }
         if (["contact", "phone", "email", "call", "reach", "hire", "number", "talk"].some(k => lower.includes(k))) {
           return "You can reach us directly:\n• Email: simple.agency0011@gmail.com\n• Instagram: @simple____agency\n• Or submit an inquiry through our Contact form on this page!";

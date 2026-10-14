@@ -16,26 +16,26 @@ DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 FAQ_RESPONSES = {
     "website": (
-        "Our Website package is a one-time fee of ₹6,999 (or ₹11,999 bundled with an AI Agent). "
+        "Our Website package is a one-time fee of ₹4,999 (or ₹6,999 bundled with 1 AI Agent / ₹7,999 with 2 AI Agents). "
         "It includes up to 6 custom responsive pages, contact intake form, and 30 days of complimentary ad campaign setup "
         "on 1 platform. You own 100% of your website code with zero recurring agency retainers."
     ),
     "ai agent": (
         "Our AI Agents operate 24/7 on WhatsApp or Instagram to answer customer questions, "
         "share product specs/catalogs, and capture leads while you sleep. "
-        "Setup is a one-time fee of ₹3,999 for a single platform, or ₹4,999 for both WhatsApp + Instagram synchronized."
+        "Setup is a one-time fee of ₹1,799 for a single platform, or ₹2,799 for both WhatsApp + Instagram synchronized."
     ),
     "ad run": (
         "Our Ad Run service covers audience research, tracking setup, daily bid checks, and weekly reporting "
-        "across Instagram, Facebook, Google, YouTube, or X. Management is ₹1,599/mo for 1 platform or ₹2,699/mo for 2 platforms. "
+        "across Instagram, Facebook, Google, YouTube, or X. Management is ₹1,499/mo for 1 platform or ₹2,499/mo for 2 platforms. "
         "Important: Ad spend is paid directly by you to Meta/Google; client supplies ad creative graphics/videos."
     ),
     "pricing": (
         "Here are our transparent rates in INR:\n"
-        "1. Website + AI Agent + Free Ad Run: ₹11,999 (Both AI: ₹12,999) [One-time implementation]\n"
-        "2. Website + Free Ad Run: ₹6,999 [One-time development]\n"
-        "3. AI Agent + Free Ad Run: ₹3,999 (Both AI: ₹4,999) [One-time setup]\n"
-        "4. Ad Run Only: ₹1,599/mo (1 platform) or ₹2,699/mo (2 platforms) [Monthly recurring].\n"
+        "1. Website + AI Agent + Free Ad Run: ₹6,999 (Both AI: ₹7,999) [One-time implementation]\n"
+        "2. Website + Free Ad Run: ₹4,999 [One-time development]\n"
+        "3. AI Agent + Free Ad Run: ₹1,799 (Both AI: ₹2,799) [One-time setup]\n"
+        "4. Ad Run Only: ₹1,499/mo (1 platform) or ₹2,499/mo (2 platforms) [Monthly recurring].\n"
         "Note: 'Free Ad Run' covers 30 days of campaign management. Direct ad spend is funded separately by the client."
     ),
     "contact": (
